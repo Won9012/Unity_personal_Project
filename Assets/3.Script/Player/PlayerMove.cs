@@ -6,7 +6,9 @@ public class PlayerMove : MonoBehaviour
 {
     private Animator anim;
 
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float Walk_Speed = 5f;
+    private float Stop = 0f;
+    private float MoveSpeed;
     [SerializeField] private float RotationSpeed = 3f;
 
     [Header("Camera")]
@@ -21,6 +23,7 @@ public class PlayerMove : MonoBehaviour
     {
         TryGetComponent(out anim);
         camera = Camera.main;
+        MoveSpeed = Walk_Speed;
     }
 
     private void Update()
@@ -58,7 +61,12 @@ public class PlayerMove : MonoBehaviour
                 RotationSpeed * Time.deltaTime
             );
         }
-        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        transform.position += moveDirection * MoveSpeed * Time.deltaTime;
+    }
+
+    private void Ride_Car()
+    {
+        
     }
 
 }
