@@ -751,6 +751,7 @@ MonoBehaviour:
   player_m: {fileID: 490000968332463330}
   carMove: {fileID: 1021587104}
   player_rb: {fileID: 490000968332463332}
+  car_rb: {fileID: 1021587102}
   middle: {fileID: 413746015}
   player: {fileID: 490000968332463329}
   Riding_UI: {fileID: 1438303720}
@@ -1697,7 +1698,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564362362}
-  m_LocalRotation: {x: 0.25350744, y: 0.6601015, z: -0.25350738, w: 0.66010153}
+  m_LocalRotation: {x: 0.25350738, y: 0.66010153, z: -0.25350744, w: 0.6601015}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2444,7 +2445,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940735624}
-  m_LocalRotation: {x: 0.292188, y: 0.64391476, z: -0.29218805, w: 0.6439147}
+  m_LocalRotation: {x: 0.29218805, y: 0.64391464, z: -0.292188, w: 0.6439148}
   m_LocalPosition: {x: -1.7220002, y: 2.92, z: 6.963999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2702,8 +2703,8 @@ Rigidbody:
   m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.01
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2715,7 +2716,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021587101}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.56, z: 8.71}
+  m_LocalPosition: {x: 0, y: 1.25, z: 8.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1054096651}
@@ -2745,7 +2746,7 @@ MonoBehaviour:
   - {fileID: 816521265}
   - {fileID: 559457167}
   - {fileID: 2072683533}
-  maxF: 1000
+  maxF: 80
   power: 6000
   rot: 45
   moveSpeed: 5
@@ -3534,7 +3535,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390205119}
-  m_LocalRotation: {x: 0.292188, y: 0.64391476, z: -0.29218805, w: 0.6439147}
+  m_LocalRotation: {x: 0.29218802, y: 0.6439147, z: -0.292188, w: 0.64391476}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5117,7 +5118,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!138 &490000968332463333
 FixedJoint:

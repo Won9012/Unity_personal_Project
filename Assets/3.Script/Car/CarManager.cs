@@ -9,6 +9,7 @@ public class CarManager : MonoBehaviour
     [SerializeField] private PlayerMove player_m;
     [SerializeField] private CarMove carMove;
     [SerializeField] private Rigidbody player_rb;
+    [SerializeField] private Rigidbody car_rb;
     [SerializeField] private GameObject middle;
 
     [SerializeField] private GameObject player;
@@ -38,6 +39,8 @@ public class CarManager : MonoBehaviour
         player.transform.parent = middle.transform;
         player_rb.useGravity = false;
         player_rb.isKinematic = true;
+        car_rb.useGravity = true;
+        car_rb.isKinematic = false;
         player_m.enabled = false;
         carMove.enabled = true;
         Ride_btn.SetActive(false);
@@ -51,6 +54,8 @@ public class CarManager : MonoBehaviour
         player.transform.parent = null;
         player_rb.useGravity = true;
         player_rb.isKinematic = false;
+        car_rb.useGravity = false;
+        car_rb.isKinematic = true;
         carMove.enabled = false;
         Ride_btn.SetActive(false);
     }
