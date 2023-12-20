@@ -9,6 +9,7 @@ public class CarManager : MonoBehaviour
     [SerializeField] private PlayerMove player_m;
     [SerializeField] private CarMove carMove;
     [SerializeField] private Rigidbody player_rb;
+    [SerializeField] private Animator player_anim;
     [SerializeField] private Rigidbody car_rb;
     [SerializeField] private GameObject middle;
 
@@ -44,6 +45,8 @@ public class CarManager : MonoBehaviour
         player_m.enabled = false;
         carMove.enabled = true;
         Ride_btn.SetActive(false);
+        player_anim.SetBool("isWalk", false);
+
     }
 
     public void Click_RideOff_btn()
@@ -59,6 +62,5 @@ public class CarManager : MonoBehaviour
         carMove.enabled = false;
         Ride_btn.SetActive(false);
     }
-
 
 }

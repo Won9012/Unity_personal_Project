@@ -751,6 +751,7 @@ MonoBehaviour:
   player_m: {fileID: 490000968332463330}
   carMove: {fileID: 1021587104}
   player_rb: {fileID: 490000968332463332}
+  player_anim: {fileID: 490000968341888641}
   car_rb: {fileID: 1021587102}
   middle: {fileID: 413746015}
   player: {fileID: 490000968332463329}

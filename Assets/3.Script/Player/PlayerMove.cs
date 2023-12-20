@@ -7,7 +7,6 @@ public class PlayerMove : MonoBehaviour
     private Animator anim;
 
     [SerializeField] private float Walk_Speed = 5f;
-    private float Stop = 0f;
     private float MoveSpeed;
     [SerializeField] private float RotationSpeed = 3f;
 
