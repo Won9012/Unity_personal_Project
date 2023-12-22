@@ -17,6 +17,8 @@ public class Store : MonoBehaviour
         {
             var slot = slotRoot.GetChild(i).GetComponent<Slot>();
 
+
+
             slots.Add(slot);
         }
     }
