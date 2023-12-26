@@ -13,7 +13,6 @@ public class RideCar : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            print("°¨Áö @@");
             Ride_btn.SetActive(true);
         }
     }

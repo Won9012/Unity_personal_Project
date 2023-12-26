@@ -7,4 +7,6 @@ public class ItemProperty
 {
     public string name;
     public Sprite sprite;
+    public int cost;
+    public int count = 0;
 }
