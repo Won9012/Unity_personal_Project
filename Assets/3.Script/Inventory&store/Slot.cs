@@ -12,7 +12,7 @@ public class Slot : MonoBehaviour
     public Button sellbtn;
     
     private Inventory inventory;
-    
+    public int index = 0;
     private bool clicked = false;
 
     public bool IsClicked()

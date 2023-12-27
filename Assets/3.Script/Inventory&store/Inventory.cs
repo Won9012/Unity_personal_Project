@@ -25,6 +25,7 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < slotCnt; i++)
         {
             var slot = rootSlot.GetChild(i).GetComponent<Slot>();
+            slot.index = i;
             slots.Add(slot);
         }
 
@@ -34,82 +35,62 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        print(slots[0].item.name);
-        print(slots[0].item.count);
-        print(slots[1].item.name);
-        print(slots[1].item.count);
-        print(slots[2].item.name);
-        print(slots[2].item.count);
-        print(slots[3].item.name);
-        print(slots[3].item.count);
+        for (int i = 0; i < 6; i++)
+        {
+            print(i+1+ " 번째 슬롯이름 " + slots[i].item.name);
+            print(i+1 + " 번째 갯수 " + slots[i].item.count);
+        }
     }
     void UpdateSlotText(Slot slot)
     {
-        int index = slots.IndexOf(slot);
-        itemCount_txt[index].text = slot.item.count.ToString();
+        itemCount_txt[slot.index].text = slot.item.count.ToString();
     }
 
     void BuyItem(ItemProperty item, int itemCount)
     {
         var emptySlot = slots.Find(t => t.item == null || t.item.name == string.Empty);
-        var SameItem = slots.Find(t => t.item != null && t.item.name == item.name);
+        var SameItem = slots.Find(t => t.item != null && t.item.name == item.name && t.item.count != MaxStack);
 
-        if (SameItem != null)
+
+        if (emptySlot != null && SameItem == null)
         {
-            int remainingSpace = MaxStack - SameItem.item.count;
 
+            emptySlot.Setitem(item);
+            emptySlot.item.count = itemCount;
+            UpdateSlotText(emptySlot);
+        }
+        else
+        {
+            //999개 - 현재 인벤토리 보유량  = 남는양
+            int remainingSpace = MaxStack - SameItem.item.count;
+            int InputNextSlotCount = itemCount - remainingSpace;
+            //남은 저장공간이 들어온 아이템 갯수보다 많다면 
             if (remainingSpace >= itemCount)
             {
                 SameItem.item.count += itemCount;
                 UpdateSlotText(SameItem);
-            }
-            else
+            }//남은 저장공간이 들어온 아이템 갯수보다 적다면 500개가 들어왔다면
+            else if (remainingSpace <= itemCount)
             {
+                // 600개가 있고 400개가 들어왔으면  399개가 remainingSpace  나머지가 1개 
                 SameItem.item.count += remainingSpace;
-                UpdateSlotText(SameItem); // 먼저 현재 슬롯을 업데이트합니다.
+                //SameItem.item.index++;
+                UpdateSlotText(SameItem);
+                SameItem.Setitem(item);
+                //아이템이 뒤로 추가되게 하기위해서 인댁스관리
+                emptySlot.item.count += InputNextSlotCount;
+                emptySlot.item.sprite = SameItem.item.sprite;
+                emptySlot.item.name = SameItem.item.name;
+                item = emptySlot.item;
+                
+                UpdateSlotText(emptySlot);
+                print(emptySlot.item);
 
-                // 다음 사용 가능한 슬롯을 찾아 남은 아이템을 추가합니다.
-                var nextEmptySlot = slots.Find(t => t.item == null || string.IsNullOrEmpty(t.item.name));
-                if (nextEmptySlot != null)
-                {
-                    AddToEmptySlot(item, itemCount - remainingSpace, nextEmptySlot);
-                }
-                else
-                {
-                    // 가득 찬 슬롯의 인덱스를 찾습니다.
-                    int fullSlotIndex = slots.IndexOf(SameItem);
+                emptySlot.Setitem(item);
 
-                    // 가득 찬 슬롯의 인덱스를 1 증가시킵니다.
-                    fullSlotIndex = (fullSlotIndex + 1) % slots.Count;
 
-                    // 0번 인덱스에 남은 아이템을 추가합니다.
-                    AddToEmptySlot(item, itemCount - remainingSpace, slots[fullSlotIndex]);
-                }
             }
         }
 
-        if (emptySlot != null && SameItem == null)
-        {
-            emptySlot.Setitem(item);
-            emptySlot.item.count = itemCount;
-            // 해당 슬롯의 텍스트 업데이트
-            UpdateSlotText(emptySlot);
-        }
-    }
-
-    void AddToEmptySlot(ItemProperty item, int itemCount, Slot emptySlot)
-    {
-        if (emptySlot != null)
-        {
-            print("빈 슬롯 이름: " + emptySlot.name);
-            emptySlot.Setitem(item);
-            emptySlot.item.count = itemCount;
-            int index = slots.IndexOf(emptySlot);
-            itemCount_txt[index].text = emptySlot.item.count.ToString();
-        }
-        else
-        {
-            print("모든 슬롯이 찼습니다!");
-        }
     }
 }
