@@ -83,8 +83,6 @@ public class Store : MonoBehaviour
         {
             // 현재 포커스된 객체의 자식들에서 Image 컴포넌트 찾기
             Image[] images = selectedObject.GetComponentsInChildren<Image>();
-
-            Debug.Log("Clicked object name: " + selectedObject.name);
             // 두 번째 Image 컴포넌트 확인
             if (images.Length >= 2)
             {

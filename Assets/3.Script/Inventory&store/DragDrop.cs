@@ -5,18 +5,35 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    private RectTransform rectTransform;
+
+    
+    
+    [SerializeField]Transform parentAfterDrag;
+    
+    private void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        print("Begin drag");
+        transform.parent = parentAfterDrag;
+
+  //      canvasGroup.blocksRaycasts = false;
+        
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = eventData.position;
+        print("dragging");
+        rectTransform.anchoredPosition += eventData.delta / GetComponentInParent<Canvas>().scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        print("end drag");
+        transform.SetParent(parentAfterDrag);
     }
 }
