@@ -76,7 +76,14 @@ public class Inventory : MonoBehaviour
                 }
                 else
                 {
-                    print("모든 슬롯이 찼습니다!");
+                    // 가득 찬 슬롯의 인덱스를 찾습니다.
+                    int fullSlotIndex = slots.IndexOf(SameItem);
+
+                    // 가득 찬 슬롯의 인덱스를 1 증가시킵니다.
+                    fullSlotIndex = (fullSlotIndex + 1) % slots.Count;
+
+                    // 0번 인덱스에 남은 아이템을 추가합니다.
+                    AddToEmptySlot(item, itemCount - remainingSpace, slots[fullSlotIndex]);
                 }
             }
         }
