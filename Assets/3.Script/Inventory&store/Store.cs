@@ -38,7 +38,7 @@ public class Store : MonoBehaviour
             var slot = slotRoot.GetChild(i).GetComponent<Slot>();
             if (i < itemBuffer.items.Count)
             {
-                slot.Setitem(itemBuffer.items[i]);
+                slot.Setitem(itemBuffer.items[i],slot.index);
             }
             else
             {
@@ -107,7 +107,7 @@ public class Store : MonoBehaviour
 
     public void Buying_Item(Slot slot)
     {
-        if (Buy_items != null && GetItemCountFromUser() > 0f)
+        if (Buy_items != null && GetItemCountFromUser() != 0)
         {
             Buy_items(slot.item, GetItemCountFromUser());
             print("¹¹»ç³Ä@@@ : " + slot.item.name);
