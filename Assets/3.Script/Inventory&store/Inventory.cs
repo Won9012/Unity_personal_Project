@@ -107,12 +107,11 @@ public class Inventory : MonoBehaviour
         ItemProperty AItem = slotA.item;
         ItemProperty BItem = slotB.item;
 
-        // slotA = b;
-        // slotB = a;
+        ItemProperty temp = AItem;
 
-        /*ItemProperty temp = new ItemProperty(slotA.item);
-        slotA.item = slotB.item;
-        slotB.item = temp;*/
+        slotA.item = BItem;
+        slotB.item = temp;
+
 
     }
 
