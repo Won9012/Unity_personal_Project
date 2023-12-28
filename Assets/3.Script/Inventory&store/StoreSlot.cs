@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour, IDropHandler
+public class StoreSlot : MonoBehaviour
 {
     [HideInInspector]
     public ItemProperty item;
     public Image image;
     public Store store;
-    
+
     public Button sellbtn;
-    
-    [SerializeField]private Inventory inventory;
+
+    [SerializeField] private Inventory inventory;
     public int index = 0;
     private bool clicked = false;
 
@@ -32,20 +31,20 @@ public class Slot : MonoBehaviour, IDropHandler
     }
 
 
-    public void Setitem(ItemProperty newitem,int index)
+    public void Setitem_store(ItemProperty newitem, int index)
     {
-       // this.item = item;
+        // this.item = item;
 
         item = newitem;
 
-        if(item == null)
+        if (item == null)
         {
-            image.enabled  = false;
+            image.enabled = false;
             gameObject.name = "Empty";
         }
         else
         {
-            if(item != null)
+            if (item != null)
             {
                 Transform parentTransform = gameObject.transform;
                 image.enabled = true;
@@ -59,26 +58,11 @@ public class Slot : MonoBehaviour, IDropHandler
                 }
                 else
                 {
-                   print("부모에 자식이 없습니다.");
+                    print("부모에 자식이 없습니다.");
                 }
-                
+
             }
         }
     }
-
-    public void OnDrop(PointerEventData eventData)
-    {
-        GameObject dropped = eventData.pointerDrag;
-        DragDrop DragItem = dropped.GetComponent<DragDrop>();
-        DragItem.parentAfterDrag = transform;
-       
-        if (gameObject.transform.GetChild(0).gameObject != null)
-        {
-            gameObject.transform.GetChild(0).gameObject.transform.SetParent(DragItem.originTransform);
-        }
-        int thisSlotIndex = transform.GetSiblingIndex();
-        int originSlotIndex = DragItem.originTransform.GetSiblingIndex();
-        inventory.SwapSlots(thisSlotIndex, originSlotIndex);
-    }
-
 }
+
