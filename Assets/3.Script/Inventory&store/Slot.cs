@@ -70,11 +70,26 @@ public class Slot : MonoBehaviour, IDropHandler
     {
         GameObject dropped = eventData.pointerDrag;
         DragDrop DragItem = dropped.GetComponent<DragDrop>();
+
+/*        //드래그엔 드랍후 놓는 위치에 원래 있던 이미지 
+        Image targetSlotImg = gameObject.transform.GetChild(0).gameObject.GetComponent<Image>();
+        //드래그하고 있는녀석의 이미지
+        Image DragImg = DragItem.image;
+*/
+        //드래그한 아이템을 타겟 슬롯의 위치에 놓는작업
         DragItem.parentAfterDrag = transform;
-       
+        //드래그 아이템 이미지 초기화
+       // DragItem.image = targetSlotImg; 
+
+        
+
+
         if (gameObject.transform.GetChild(0).gameObject != null)
         {
+            //스왑된 타겟슬롯의 위치 설정
             gameObject.transform.GetChild(0).gameObject.transform.SetParent(DragItem.originTransform);
+            //스왑된 타겟슬롯의 이미지 초기화
+    //        targetSlotImg = DragImg;
         }
         int thisSlotIndex = transform.GetSiblingIndex();
         int originSlotIndex = DragItem.originTransform.GetSiblingIndex();

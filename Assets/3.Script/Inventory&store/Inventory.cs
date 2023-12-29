@@ -42,11 +42,11 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        print("0번째슬롯 이름" + slots[0].item.name + "       \n       0번째 슬롯 갯수" + slots[0].item.count);
+/*        print("0번째슬롯 이름" + slots[0].item.name + "       \n       0번째 슬롯 갯수" + slots[0].item.count);
         print("1번째슬롯 이름" + slots[1].item.name + "       \n       2번째 슬롯 갯수" + slots[1].item.count);
         print("2번째슬롯 이름" + slots[2].item.name + "       \n       3번째 슬롯 갯수" + slots[2].item.count);
         print("3번째슬롯 이름" + slots[3].item.name + "       \n       4번째 슬롯 갯수" + slots[3].item.count);
-        print("4번째슬롯 이름" + slots[4].item.name + "       \n       5번째 슬롯 갯수" + slots[4].item.count);
+        print("4번째슬롯 이름" + slots[4].item.name + "       \n       5번째 슬롯 갯수" + slots[4].item.count);*/
 
 /*        print("0번째슬롯복제 이름" + slots_duplicate[0].item.name + "       \n       0번째 슬롯복제 갯수" + slots_duplicate[0].item.count);
         print("1번째슬롯복제 이름" + slots_duplicate[1].item.name + "       \n       2번째 슬롯복제 갯수" + slots_duplicate[1].item.count);
@@ -64,7 +64,6 @@ public class Inventory : MonoBehaviour
 
         if (emptySlot != null && SameItem == null)
         {
-            emptySlot.image.sprite = item.sprite;
             emptySlot.Setitem(item, emptySlot.index);
             emptySlot.item.count = itemCount;
             UpdateSlotText(emptySlot);
@@ -112,7 +111,17 @@ public class Inventory : MonoBehaviour
         slotA.item = BItem;
         slotB.item = temp;
 
+        StartCoroutine(GetImg(slotA, slotB,indexA,indexB));
+    }
 
+    IEnumerator GetImg(Slot slotA, Slot slotB, int indexA, int indexB)
+    {
+        yield return new WaitForSeconds(0.1f);
+        print(slotA.gameObject.transform.GetChild(0).gameObject.name);
+        print(slotB.gameObject.transform.GetChild(0).gameObject.name);
+        slotA.image = slotA.gameObject.transform.GetChild(0).gameObject.GetComponent<Image>();
+        slotB.image = slotB.gameObject.transform.GetChild(0).gameObject.GetComponent<Image>();
+        itemCount_txt[slot.index]
     }
 
 
