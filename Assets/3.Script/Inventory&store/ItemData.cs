@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName ="Item")]
+[CreateAssetMenu(menuName ="Items/Item")]
 public class ItemData : ScriptableObject
 {
     public string description;

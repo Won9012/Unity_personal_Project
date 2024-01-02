@@ -9,4 +9,5 @@ public class ItemProperty
     public Sprite sprite;
     public int cost;
     public int count = 0;
+    public string Description;
 }

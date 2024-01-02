@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class EquipmentData : MonoBehaviour
+[CreateAssetMenu(menuName = "Items/Equipment")]
+public class EquipmentData : ItemData
 {
-    // Start is called before the first frame update
-    void Start()
+    public enum ToolType
     {
-        
+        Hoe, Watering, Axe, Pickaxe
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public ToolType toolType;
 }

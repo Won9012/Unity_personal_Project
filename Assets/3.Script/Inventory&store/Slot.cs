@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour, IDropHandler
+public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler
 {
     [HideInInspector]
     public ItemProperty item;
@@ -96,4 +96,8 @@ public class Slot : MonoBehaviour, IDropHandler
         inventory.SwapSlots(thisSlotIndex, originSlotIndex);
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        
+    }
 }

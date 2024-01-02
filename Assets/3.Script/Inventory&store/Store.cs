@@ -11,11 +11,13 @@ public class Store : MonoBehaviour
     public Transform slotRoot;
 
     public InputField itemCountInput;
+    public Text Item_Description;
     public int inputMax = 999;
     public Text itemcount;
     public GameObject BuyUI;
 
     public Image Select_img;
+    public Text Select_text;
 
     private List<Slot> slots;
 
@@ -57,7 +59,7 @@ public class Store : MonoBehaviour
     private void OnStoreItemClick(Slot slot)
     {
         selectedStoreItem = slot.item;
-
+        Select_text.text = slot.item.Description;
         // 아이템 정보를 BuyUI 패널에 표시
         onBuyUI();
     }
