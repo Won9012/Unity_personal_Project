@@ -18,17 +18,34 @@ public class PlayerMove : MonoBehaviour
     private bool iswalk = false;
 
 
+    //Interaction components
+    PlayerInteraction playerInteraction;
+
     private void Awake()
     {
         TryGetComponent(out anim);
         camera = Camera.main;
         MoveSpeed = Walk_Speed;
+        playerInteraction = GetComponentInChildren<PlayerInteraction>();
     }
 
     private void Update()
     {
         Player_Move();
+        Interact();
     }
+
+    public void Interact()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            //interact
+            playerInteraction.Interact();
+        }
+
+        //Todo: Set up item interaction;
+    }
+
     private void Player_Move()
     {
         float h = Input.GetAxis("Horizontal");
