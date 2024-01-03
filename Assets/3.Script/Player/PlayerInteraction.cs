@@ -55,11 +55,11 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     //플레이어가 버튼을 눌렀을때 상호작용할키
-    public void Interact()
+    public void Interact(Tools.ToolType toolType)
     {
         if(selectedLand != null)
         {
-            selectedLand.Interact();
+            selectedLand.Interact(toolType);
             return;
         }
         print("Not on any land!");

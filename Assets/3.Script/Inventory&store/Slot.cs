@@ -8,7 +8,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerC
 {
     public enum SlotType
     {
-        Store, Inventory
+        Store, Inventory,Tools
     }
 
     public SlotType slotType;

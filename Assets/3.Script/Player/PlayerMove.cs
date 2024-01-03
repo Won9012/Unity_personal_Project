@@ -13,7 +13,6 @@ public class PlayerMove : MonoBehaviour
     [Header("Camera")]
      private Camera camera;
 
-
     //Animator 동작 관련 bool 변수 설정
     private bool iswalk = false;
 
@@ -32,15 +31,16 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         Player_Move();
-        Interact();
+        Interact(Tools.toolType);
+        print(Tools.toolType);
     }
 
-    public void Interact()
+    public void Interact(Tools.ToolType toolType)
     {
         if (Input.GetButtonDown("Fire1"))
         {
             //interact
-            playerInteraction.Interact();
+            playerInteraction.Interact(toolType);
         }
 
         //Todo: Set up item interaction;

@@ -17,6 +17,8 @@ public class Inventory : MonoBehaviour
     public int Money = 10000;
 
 
+
+
     private void Start()
     {
         slots = new List<Slot>();
