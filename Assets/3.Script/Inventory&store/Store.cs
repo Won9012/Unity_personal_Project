@@ -19,8 +19,10 @@ public class Store : MonoBehaviour
     public Image Select_img;
     public Text Select_text;
 
-    private List<Slot> slots;
 
+    private List<Slot> slots;
+    
+    
     public Action<ItemProperty, int> Buy_items;
     // Start is called before the first frame update
 
@@ -28,11 +30,14 @@ public class Store : MonoBehaviour
     void Start()
     {
         StoreSeting();
+        
     }
 
     public void StoreSeting()
     {
         slots = new List<Slot>();
+        //Slot.SlotType.Store;
+        
         int slotCnt = slotRoot.childCount;
 
         for (int i = 0; i < slotCnt; i++)

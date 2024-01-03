@@ -20,12 +20,12 @@ public class InventoryManager : MonoBehaviour
     
     [Header("Tools")]
     //Tool slots
-    public ItemData[] tools = new ItemData[8];
+    public ItemData[] tools = new ItemData[4];
     //Tool in the player's hand
     public ItemData equippedTool = null;
     [Header("Items")]
     //Item slots
-    public ItemData[] items = new ItemData[8];
+    public ItemData[] items = new ItemData[4];
     //Item in the player's hand
     public ItemData equippedItem = null;
 }

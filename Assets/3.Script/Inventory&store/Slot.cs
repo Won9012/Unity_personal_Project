@@ -6,6 +6,13 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerClickHandler
 {
+    public enum SlotType
+    {
+        Store, Inventory
+    }
+
+    public SlotType slotType;
+
     [HideInInspector]
     public ItemProperty item;
     public Image image;
@@ -104,10 +111,15 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerC
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        foreach (var slot in inventory.slots)
+        if(slotType == SlotType.Inventory)
         {
-            print(slot.item.name);
-            print(slot.item.count);
+            print(gameObject.name);
+            foreach (var slot in inventory.slots)
+            {
+           //     print(slot.item.name);
+             //   print(slot.item.count);
+            }
         }
+
     }
 }
