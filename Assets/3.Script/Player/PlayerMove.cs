@@ -32,6 +32,10 @@ public class PlayerMove : MonoBehaviour
     {
         Player_Move();
         Interact(Tools.toolType);
+        if (Input.GetKeyDown(KeyCode.RightBracket))
+        {
+            TimeManager.Instance.Tick();
+        }
     }
 
     public void Interact(Tools.ToolType toolType)

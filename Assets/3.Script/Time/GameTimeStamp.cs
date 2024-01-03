@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameTimeStamp : MonoBehaviour
+[System.Serializable]
+public class GameTimeStamp
 {
     public int year;
-
-    private void Update()
-    {
-        print(second);
-    }
 
     public enum Season
     {
@@ -20,6 +16,17 @@ public class GameTimeStamp : MonoBehaviour
     }
 
     public Season season;
+
+    public enum DayOfTheWeek
+    {
+        토요일,
+        일요일,
+        월요일,
+        화요일,
+        수요일,
+        목요일,
+        금요일
+    }
     public int day;
     public int hour;
     public int minute;
@@ -36,7 +43,73 @@ public class GameTimeStamp : MonoBehaviour
 
     public void UpdateTime()
     {
-        second += Time.deltaTime;
+        second += 10;
 
+        if(second >= 60)
+        {
+            second = 0;
+            minute++;
+        }
+
+        if(minute >= 60)
+        {
+            minute = 0;
+            hour++;
+        }
+
+        if(hour >= 24)
+        {
+            hour = 0;
+            day++;
+        }
+
+        //한달을 기준으로 계절을 바꿀것.
+        if(day > 30)
+        {
+            day = 1;
+
+            if(season == Season.Winter)
+            {
+                season = Season.Spring;
+                year++;
+            }
+            else
+            {
+
+                season++;
+            }
+        
+        }
+    }
+
+    public DayOfTheWeek GetDayofTheWeek()
+    {
+        int daysPassed = YearsToDays(year) + SeasonsToDays(season)+day;
+
+        int dayIndex = daysPassed % 7;
+        return (DayOfTheWeek)dayIndex;
+    }
+
+    public static int HoursToMinutes(int hour)
+    {
+        return hour * 60;
+    }
+
+    public static int DaysToHours(int days)
+    {
+        return days * 24;
+    }
+
+
+
+    public static int SeasonsToDays(Season season)
+    {
+        int seasonIndex = (int)season;
+        return seasonIndex * 30;
+    }
+
+    public static int YearsToDays(int years)
+    {
+        return years * 4 * 30;
     }
 }
