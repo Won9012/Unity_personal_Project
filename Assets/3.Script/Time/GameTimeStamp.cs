@@ -40,10 +40,19 @@ public class GameTimeStamp
         this.hour = hour;
         this.minute = minute;
     }
+    //복제
+    public GameTimeStamp(GameTimeStamp timeStamp)
+    {
+        this.year = timeStamp.year;
+        this.season = timeStamp.season;
+        this.day = timeStamp.day;
+        this.hour = timeStamp.hour;
+        this.minute = timeStamp.minute;
+    }
 
     public void UpdateTime()
     {
-        second += 10;
+        second++;
 
         if(second >= 60)
         {
@@ -111,5 +120,15 @@ public class GameTimeStamp
     public static int YearsToDays(int years)
     {
         return years * 4 * 30;
+    }
+
+
+    //2가지의 시간을 비교해서, 24시간을 판정?
+    public static int CompareTimestamps(GameTimeStamp timestamp1, GameTimeStamp timestamp2)
+    {
+        int timestap1Hours = DaysToHours(YearsToDays(timestamp1.year)) + DaysToHours(SeasonsToDays(timestamp1.season)) + DaysToHours(timestamp1.day) + timestamp1.hour;
+        int timestap2Hours = DaysToHours(YearsToDays(timestamp2.year)) + DaysToHours(SeasonsToDays(timestamp2.season)) + DaysToHours(timestamp2.day) + timestamp2.hour;
+        int diffrence = timestap2Hours - timestap1Hours;
+        return Mathf.Abs(diffrence);
     }
 }

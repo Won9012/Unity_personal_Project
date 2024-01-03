@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Land : MonoBehaviour
+public class Land : MonoBehaviour, ITimeTraker
 {
     //땅의 상태에 따라 농사를 할것
     public enum LandStatus
@@ -18,6 +18,8 @@ public class Land : MonoBehaviour
 
     public GameObject select;
 
+    //물뿌린 타일은 시간이 지나면 다시 farm으로 바꿔줄것..
+    GameTimeStamp timeWatered;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,8 @@ public class Land : MonoBehaviour
         //초기 땅 설정
         SwitchLandStatus(LandStatus.Grass);
         Select(false);
+
+        TimeManager.Instance.ResgisterTracker(this);
     }
 
     // Update is called once per frame
@@ -48,6 +52,7 @@ public class Land : MonoBehaviour
                 break;
             case LandStatus.waterd:
                 materialToSwich = wateredMat;
+                timeWatered =  TimeManager.Instance.GetGameTimestamp();
                 break;
             default:
                 break;
@@ -81,6 +86,22 @@ public class Land : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    public void ClockUpdate(GameTimeStamp timeStamp)
+    {
+        //24시간후에 땅초기화
+        if(landStatus == LandStatus.waterd)
+        {
+            int hoursElasped =  GameTimeStamp.CompareTimestamps(timeWatered, timeStamp);
+            print(hoursElasped);
+
+            if(hoursElasped > 23)
+            {
+                //24시간후에 땅 말라라 
+                SwitchLandStatus(LandStatus.Farmland);
+            }
         }
     }
 }

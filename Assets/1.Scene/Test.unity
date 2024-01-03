@@ -15128,10 +15128,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: cb404104e97ae0642b24456f2885ddc5, type: 3}
-    m_FontSize: 10
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -17560,6 +17560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 763835058af8291469773f52952338e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeText: {fileID: 1604417420}
+  dateText: {fileID: 2079374051}
 --- !u!114 &1903727550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17603,11 +17605,11 @@ MonoBehaviour:
     year: 0
     season: 0
     day: 0
-    hour: 0
+    hour: 12
     minute: 0
     second: 0
-  timeScale: 3
-  sunTransform: {fileID: 0}
+  timeScale: 15
+  sunTransform: {fileID: 1543347726}
 --- !u!1 &1904504495
 GameObject:
   m_ObjectHideFlags: 0
