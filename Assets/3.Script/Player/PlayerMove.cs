@@ -32,7 +32,6 @@ public class PlayerMove : MonoBehaviour
     {
         Player_Move();
         Interact(Tools.toolType);
-        print(Tools.toolType);
     }
 
     public void Interact(Tools.ToolType toolType)

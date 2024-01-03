@@ -69,17 +69,15 @@ public class Land : MonoBehaviour
         switch (toolType)
         {
             case Tools.ToolType.Axe:
-                // Handle interaction for Axe tool type (if needed)
                 break;
             case Tools.ToolType.Pick:
-                // Handle interaction for Pick tool type (if needed)
                 break;
             case Tools.ToolType.Hoe:
-                // Switch land status to Farmland when interacting with Hoe
                 SwitchLandStatus(LandStatus.Farmland);
                 break;
             case Tools.ToolType.Water:
-                // Handle interaction for Water tool type (if needed)
+                if (landStatus != LandStatus.Farmland) return;
+                SwitchLandStatus(LandStatus.waterd);
                 break;
             default:
                 break;
