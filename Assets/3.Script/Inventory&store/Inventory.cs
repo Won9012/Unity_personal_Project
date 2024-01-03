@@ -106,6 +106,7 @@ public class Inventory : MonoBehaviour
         StartCoroutine(GetImg(slotA, slotB,indexA,indexB));
     }
 
+    //뺏다 갈아끼는 순간 프레임단위로 실행되서 씹히는것 방지
     IEnumerator GetImg(Slot slotA, Slot slotB, int indexA, int indexB)
     {
         yield return new WaitForSeconds(0.1f);
@@ -114,6 +115,12 @@ public class Inventory : MonoBehaviour
         Text temp = itemCount_txt[indexA];
         itemCount_txt[indexA] = itemCount_txt[indexB];
         itemCount_txt[indexB] = temp;
+    }
+
+
+    public void UseItem()
+    {
+
     }
 
 

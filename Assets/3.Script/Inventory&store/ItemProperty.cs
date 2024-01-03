@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+/*[System.Serializable]
+
 public class ItemProperty
 {
     public string name;
@@ -10,4 +11,15 @@ public class ItemProperty
     public int cost;
     public int count = 0;
     public string Description;
+}
+*/
+
+[CreateAssetMenu(fileName = "New Item Property", menuName = "ScriptableObjects/ItemProperty")]
+public class ItemProperty : ScriptableObject
+{
+    public string name;
+    public Sprite sprite;
+    public int cost;
+    public int count = 0;
+    public string description;
 }

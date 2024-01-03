@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler
+public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerClickHandler
 {
     [HideInInspector]
     public ItemProperty item;
@@ -12,6 +12,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler
     public Store store;
     
     public Button sellbtn;
+
     
     [SerializeField]private Inventory inventory;
     public int index = 0;
@@ -98,6 +99,15 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        
+      //  print(gameObject.name);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        foreach (var slot in inventory.slots)
+        {
+            print(slot.item.name);
+            print(slot.item.count);
+        }
     }
 }
