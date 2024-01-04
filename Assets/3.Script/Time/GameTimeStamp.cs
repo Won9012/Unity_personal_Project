@@ -30,15 +30,16 @@ public class GameTimeStamp
     public int day;
     public int hour;
     public int minute;
-    public float second;
+    public int second;
 
-    public GameTimeStamp(int year, Season season, int day, int hour, int minute, float second)
+    public GameTimeStamp(int year, Season season, int day, int hour, int minute, int second)
     {
         this.year = year;
         this.season = season;
         this.day = day;
         this.hour = hour;
         this.minute = minute;
+        this.second = second;
     }
     //º¹Á¦
     public GameTimeStamp(GameTimeStamp timeStamp)
@@ -48,6 +49,7 @@ public class GameTimeStamp
         this.day = timeStamp.day;
         this.hour = timeStamp.hour;
         this.minute = timeStamp.minute;
+        this.second = timeStamp.second;
     }
 
     public void UpdateTime()
@@ -103,6 +105,12 @@ public class GameTimeStamp
     {
         return hour * 60;
     }
+    public static int HoursToSecond(int minuts)
+    {
+        return minuts * 60;
+    }
+
+
 
     public static int DaysToHours(int days)
     {

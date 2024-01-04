@@ -15,10 +15,48 @@ public class PlayerInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
+/*        RaycastHit hit;
         if(Physics.Raycast(transform.position,Vector3.down,out hit, 1))
         {
             OninteractableHit(hit);
+        }
+*/
+        // Check if the left mouse button is pressed
+/*        if (Input.GetMouseButtonDown(0))
+        {
+            // Cast a ray from the mouse position
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                OnInteractableHit(hit);
+            }
+        }*/
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            OnInteractableHit(hit);
+        }
+    }
+
+    void OnInteractableHit(RaycastHit hit)
+    {
+        Collider other = hit.collider;
+
+        if (other.CompareTag("Land"))
+        {
+            Land land = other.GetComponent<Land>();
+            SelectLand(land);
+            return;
+        }
+
+        if (selectedLand != null)
+        {
+            selectedLand.Select(false);
+            selectedLand = null;
         }
     }
 
@@ -26,7 +64,7 @@ public class PlayerInteraction : MonoBehaviour
     void OninteractableHit(RaycastHit hit)
     {
         Collider other = hit.collider;
-        print(other);
+        //print(other);
         if(other.tag == "Land")
         {
             Land land = other.GetComponent<Land>();
@@ -62,6 +100,6 @@ public class PlayerInteraction : MonoBehaviour
             selectedLand.Interact(toolType);
             return;
         }
-        print("Not on any land!");
+        print("Not land!");
     }
 }

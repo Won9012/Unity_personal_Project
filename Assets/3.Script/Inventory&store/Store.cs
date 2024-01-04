@@ -29,8 +29,7 @@ public class Store : MonoBehaviour
     private ItemProperty selectedStoreItem;
     void Start()
     {
-        StoreSeting();
-        
+        StoreSeting(); 
     }
 
     public void StoreSeting()

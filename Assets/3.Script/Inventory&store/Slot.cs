@@ -109,10 +109,14 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerC
       //  print(gameObject.name);
     }
 
+    //인벤토리에서 아이템을 눌렀을때 정보를 받아줄것@
+    //인벤토리에서 눌렀을때는 인댁스번호를 가져와서 하고
+    //퀵슬롯에서 눌렀을 때는 해당아이템이 있다면 가장 낮은 인댁스번호(인벤토리 가장 앞에있는녀석을 우선사용)
     public void OnPointerClick(PointerEventData eventData)
     {
         if(slotType == SlotType.Inventory)
         {
+            
             print(gameObject.name);
             foreach (var slot in inventory.slots)
             {

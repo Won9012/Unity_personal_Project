@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.45125479, g: 0.5009533, b: 0.57345235, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -239,10 +239,10 @@ RectTransform:
   m_Father: {fileID: 2106474888}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &6473400
 CanvasGroup:
@@ -425,10 +425,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140, y: -236}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &23718642
 MonoBehaviour:
@@ -541,6 +541,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 1915825228}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -643,6 +645,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 1496421041}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -852,10 +856,10 @@ RectTransform:
   m_Father: {fileID: 627539015}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &52706074
 CanvasGroup:
@@ -929,6 +933,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2010341925}
     m_Modifications:
+    - target: {fileID: 2516799480688384864, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 782491089}
     - target: {fileID: 2516799480688384867, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
       propertyPath: m_Name
       value: Land (7)
@@ -1019,10 +1027,10 @@ RectTransform:
   m_Father: {fileID: 1823007247}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &85261879
 CanvasGroup:
@@ -1126,10 +1134,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -138}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &87359076
 MonoBehaviour:
@@ -1242,6 +1250,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 1366732912}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -1531,10 +1541,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 340, y: -236}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &105373731
 MonoBehaviour:
@@ -1647,6 +1657,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 1123351950}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -1884,10 +1896,10 @@ RectTransform:
   m_Father: {fileID: 281292175}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &190025095
 CanvasGroup:
@@ -2338,6 +2350,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 38166148}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -2483,6 +2497,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2010341925}
     m_Modifications:
+    - target: {fileID: 2516799480688384864, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 782491089}
     - target: {fileID: 2516799480688384867, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
       propertyPath: m_Name
       value: Land (2)
@@ -2639,10 +2657,10 @@ RectTransform:
   m_Father: {fileID: 2136614809}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &278528715
 CanvasGroup:
@@ -2746,10 +2764,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140, y: -432}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &281292176
 MonoBehaviour:
@@ -2862,6 +2880,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 190025097}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -3305,10 +3325,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -334}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &312917899
 MonoBehaviour:
@@ -3421,6 +3441,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 1716160897}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -3979,10 +4001,10 @@ RectTransform:
   m_Father: {fileID: 1219802492}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &373772321
 CanvasGroup:
@@ -4056,6 +4078,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2010341925}
     m_Modifications:
+    - target: {fileID: 2516799480688384864, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 782491089}
     - target: {fileID: 2516799480688384867, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
       propertyPath: m_Name
       value: Land (8)
@@ -4745,22 +4771,30 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: "\uB098\uBB34 \uBC8C\uBAA9 \uB3C4\uAD6C"
+    cropToYield: 0
+    seeding: {fileID: 0}
   - name: "\uACE1\uAD2D\uC774"
     sprite: {fileID: 21300000, guid: 8243fc8ee4f8cdd4ba33cb388e773fe4, type: 2}
     cost: 300
     count: 0
     Description: "\uB545\uC744 \uAC08\uC544\uBC84\uB9AC\uB294 \uACE1\uAD2D\uC774"
+    cropToYield: 0
+    seeding: {fileID: 0}
   - name: "\uC0BD"
     sprite: {fileID: 21300000, guid: db30add56f4561a4ca50db547bcc5c37, type: 2}
     cost: 300
     count: 0
     Description: "\uC791\uBB3C\uC744 \uC218\uD655\uD558\uB294\uB300 \uC4F0\uB294
       \uC0BD"
+    cropToYield: 0
+    seeding: {fileID: 0}
   - name: "\uBB3C\uBFCC\uB9AC\uAC1C"
-    sprite: {fileID: 8515852673137835333, guid: dfac25675978ea041b7eba32dd109c92, type: 3}
+    sprite: {fileID: 21300000, guid: fa6ca4b2ab3237f40b321b30c47bb74f, type: 3}
     cost: 300
     count: 0
     Description: "\uC791\uBB3C \uC0DD\uC0B0 \uC18D\uB3C4 \uD5A5\uC0C1"
+    cropToYield: 0
+    seeding: {fileID: 0}
   itemType: 1
 --- !u!4 &459535511
 Transform:
@@ -4811,10 +4845,10 @@ RectTransform:
   m_Father: {fileID: 1955785742}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &467696009
 CanvasGroup:
@@ -4888,6 +4922,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2010341925}
     m_Modifications:
+    - target: {fileID: 2516799480688384864, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 782491089}
     - target: {fileID: 2516799480688384867, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
       propertyPath: m_Name
       value: Land (4)
@@ -5232,10 +5270,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -432}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504255879
 MonoBehaviour:
@@ -5348,6 +5386,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 1986592125}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -5575,10 +5615,10 @@ RectTransform:
   m_Father: {fileID: 1909154901}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &517786523
 CanvasGroup:
@@ -5682,10 +5722,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531918991
 MonoBehaviour:
@@ -5762,6 +5802,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 2070497338}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -6548,10 +6590,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 340, y: -432}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627539016
 MonoBehaviour:
@@ -6664,6 +6706,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 52706076}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -6714,6 +6758,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2010341925}
     m_Modifications:
+    - target: {fileID: 2516799480688384864, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 782491089}
     - target: {fileID: 2516799480688384867, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
       propertyPath: m_Name
       value: Land (5)
@@ -6922,6 +6970,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 1616458821}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -7133,10 +7183,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -236}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &662637115
 MonoBehaviour:
@@ -7249,6 +7299,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 1817719478}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -7393,10 +7445,10 @@ RectTransform:
   m_Father: {fileID: 1562395737}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &673425577
 CanvasGroup:
@@ -8142,10 +8194,10 @@ RectTransform:
   m_Father: {fileID: 1279423058}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &771226482
 CanvasGroup:
@@ -8228,7 +8280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &782491088
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9048,10 +9100,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -236}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &893224288
 MonoBehaviour:
@@ -9164,6 +9216,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 1260229799}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -9320,10 +9374,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -432}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &910464779
 MonoBehaviour:
@@ -9436,6 +9490,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 2142444557}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -9788,10 +9844,10 @@ RectTransform:
   m_Father: {fileID: 2121098627}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &950690050
 CanvasGroup:
@@ -10107,6 +10163,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 191030723}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -10772,6 +10830,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 600145522}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -10950,6 +11010,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2010341925}
     m_Modifications:
+    - target: {fileID: 2516799480688384864, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 782491089}
     - target: {fileID: 2516799480688384867, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
       propertyPath: m_Name
       value: Land (6)
@@ -11119,10 +11183,10 @@ RectTransform:
   m_Father: {fileID: 105373730}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1123351948
 CanvasGroup:
@@ -11463,10 +11527,10 @@ RectTransform:
   m_Father: {fileID: 1233248517}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1193456263
 CanvasGroup:
@@ -11570,10 +11634,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -138}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219802493
 MonoBehaviour:
@@ -11686,6 +11750,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 373772323}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -11766,10 +11832,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 340, y: -138}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1233248518
 MonoBehaviour:
@@ -11882,6 +11948,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 1193456265}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -11961,32 +12029,44 @@ MonoBehaviour:
     count: 0
     Description: "\uB098\uBB34\uB97C \uD0A4\uC6CC \uBAA9\uC7AC\uB97C \uC5BB\uC744
       \uC218 \uC788\uB2E4"
+    cropToYield: 5
+    seeding: {fileID: 0}
   - name: "\uAC00\uC9C0"
     sprite: {fileID: 21300000, guid: 2df1df31095e30f4eba0a0d9b11ee2cc, type: 3}
     cost: 100
     count: 0
     Description: "\uB9DB\uC5C6\uACE0 \uC601\uC591\uC774 \uD48D\uBD80\uD55C \uAC00\uC9C0"
+    cropToYield: 3
+    seeding: {fileID: 0}
   - name: "\uC21C\uBB34"
     sprite: {fileID: 21300000, guid: 6d698ca580ed40f46936afa68c7492a7, type: 3}
     cost: 200
     count: 0
     Description: "\uB2EC\uCF64\uD55C \uBFCC\uB9AC\uCC44\uC18C..?"
+    cropToYield: 3
+    seeding: {fileID: 0}
   - name: "\uC625\uC218\uC218"
     sprite: {fileID: 21300000, guid: 44498231670d15141831cf88bf16fcb6, type: 3}
     cost: 150
     count: 0
     Description: "\uCF58\uCE58\uC988 \uD574\uBA39\uC73C\uBA74 \uB9DB\uC788\uB294
       \uC625\uC218\uC218"
+    cropToYield: 0
+    seeding: {fileID: 0}
   - name: "\uD1A0\uB9C8\uD1A0"
     sprite: {fileID: 21300000, guid: 46b69102426116848a67585e77523a82, type: 3}
     cost: 250
     count: 0
     Description: "\uD1A0\uB9C8\uD1A0\uB294 \uAC70\uAFB8\uB85C \uD574\uB3C4 \uD1A0\uB9C8\uD1A0"
+    cropToYield: 3
+    seeding: {fileID: 0}
   - name: "\uD638\uBC15"
     sprite: {fileID: 21300000, guid: fcc813065fd67254fb342bf6d2c8ca19, type: 3}
     cost: 300
     count: 0
     Description: "\uC2EC\uC73C\uBA74 \uAC70\uB300\uD574\uC9C0\uB294 \uD638\uBC15"
+    cropToYield: 4
+    seeding: {fileID: 0}
   itemType: 0
 --- !u!4 &1244729525
 Transform:
@@ -12037,10 +12117,10 @@ RectTransform:
   m_Father: {fileID: 893224287}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1260229797
 CanvasGroup:
@@ -12222,6 +12302,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 443951516}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -12302,10 +12384,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 440, y: -236}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1279423059
 MonoBehaviour:
@@ -12418,6 +12500,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 771226484}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -13035,10 +13119,10 @@ RectTransform:
   m_Father: {fileID: 87359075}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1366732910
 CanvasGroup:
@@ -13406,6 +13490,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 790223689}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -13508,6 +13594,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 515830361}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -13681,10 +13769,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140, y: -138}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1441016516
 MonoBehaviour:
@@ -13797,6 +13885,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 2051115575}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -14497,13 +14587,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543347724}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.27513403, y: 0, z: 0, w: 0.96140593}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 31.94, y: 0, z: 0}
 --- !u!1 &1545361641
 GameObject:
   m_ObjectHideFlags: 0
@@ -14654,6 +14744,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2010341925}
     m_Modifications:
+    - target: {fileID: 2516799480688384864, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 782491089}
     - target: {fileID: 2516799480688384867, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
       propertyPath: m_Name
       value: Land (3)
@@ -14746,10 +14840,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -40}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1562395738
 MonoBehaviour:
@@ -14862,6 +14956,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 673425579}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -15386,10 +15482,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 440, y: -138}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1670044501
 MonoBehaviour:
@@ -15502,6 +15598,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 2030760866}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -15693,10 +15791,10 @@ RectTransform:
   m_Father: {fileID: 312917898}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1716160895
 CanvasGroup:
@@ -16316,6 +16414,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 1293283396}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -16418,6 +16518,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 1738155947}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -16552,10 +16654,10 @@ RectTransform:
   m_Father: {fileID: 662637114}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1817719476
 CanvasGroup:
@@ -16738,10 +16840,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 340, y: -334}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1823007248
 MonoBehaviour:
@@ -16854,6 +16956,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 85261881}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -17078,6 +17182,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 199663005}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -17212,10 +17318,10 @@ RectTransform:
   m_Father: {fileID: 2100836862}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1850772671
 CanvasGroup:
@@ -17608,7 +17714,7 @@ MonoBehaviour:
     hour: 12
     minute: 0
     second: 0
-  timeScale: 15
+  timeScale: 15000
   sunTransform: {fileID: 1543347726}
 --- !u!1 &1904504495
 GameObject:
@@ -17709,10 +17815,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140, y: -334}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1909154902
 MonoBehaviour:
@@ -17825,6 +17931,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 517786525}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -18036,10 +18144,10 @@ RectTransform:
   m_Father: {fileID: 23718641}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1915825226
 CanvasGroup:
@@ -18340,6 +18448,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 169230641}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -18438,10 +18548,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 440, y: -40}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1955785743
 MonoBehaviour:
@@ -18554,6 +18664,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 467696011}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -18634,10 +18746,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 440, y: -334}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1985582266
 MonoBehaviour:
@@ -18750,6 +18862,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 2003452205}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -18828,10 +18942,10 @@ RectTransform:
   m_Father: {fileID: 504255878}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1986592123
 CanvasGroup:
@@ -18933,10 +19047,10 @@ RectTransform:
   m_Father: {fileID: 1985582265}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &2003452203
 CanvasGroup:
@@ -19284,10 +19398,10 @@ RectTransform:
   m_Father: {fileID: 1670044500}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &2030760864
 CanvasGroup:
@@ -19361,6 +19475,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2010341925}
     m_Modifications:
+    - target: {fileID: 2516799480688384864, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 782491089}
     - target: {fileID: 2516799480688384867, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
       propertyPath: m_Name
       value: Land (1)
@@ -19451,10 +19569,10 @@ RectTransform:
   m_Father: {fileID: 1441016515}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &2051115573
 CanvasGroup:
@@ -19748,10 +19866,10 @@ RectTransform:
   m_Father: {fileID: 531918990}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070497338
 MonoBehaviour:
@@ -20257,10 +20375,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 440, y: -432}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2100836863
 MonoBehaviour:
@@ -20373,6 +20491,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 1850772673}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -20532,10 +20652,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140, y: -40}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106474889
 MonoBehaviour:
@@ -20648,6 +20768,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 6473402}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -20807,10 +20929,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -334}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2121098628
 MonoBehaviour:
@@ -20923,6 +21045,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 950690052}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -21003,10 +21127,10 @@ RectTransform:
   m_Father: {fileID: 1563777162}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 340, y: -40}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136614810
 MonoBehaviour:
@@ -21119,6 +21243,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
+    cropToYield: 0
+    seeding: {fileID: 0}
   image: {fileID: 278528717}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -21197,10 +21323,10 @@ RectTransform:
   m_Father: {fileID: 910464778}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &2142444555
 CanvasGroup:
@@ -21650,6 +21776,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2010341925}
     m_Modifications:
+    - target: {fileID: 2516799480688384864, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 782491089}
     - target: {fileID: 2516799480688384867, guid: 37183af386d16ae4abafde0915421f3b, type: 3}
       propertyPath: m_Name
       value: Land

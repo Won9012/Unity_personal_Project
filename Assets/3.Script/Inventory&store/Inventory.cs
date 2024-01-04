@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
         slots = new List<Slot>();
         store.Buy_items += BuyItem;
         GetSlotIdx();
-
+        gameObject.SetActive(false);
     }
 
     private void GetSlotIdx()

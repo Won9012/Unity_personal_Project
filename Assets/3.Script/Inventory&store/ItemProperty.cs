@@ -10,6 +10,9 @@ public class ItemProperty
     public int cost;
     public int count = 0;
     public string Description;
+
+    public int cropToYield;
+    public GameObject seeding;
 }
 
 public enum ItemType
