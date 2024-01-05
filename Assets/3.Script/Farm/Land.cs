@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Land : MonoBehaviour, ITimeTraker
+public class Land : MonoBehaviour, ITimeTraker, IPointerClickHandler
 {
     [SerializeField] Inventory inventory;
     Slot slot;
+
+    public Vector3 LandPosition;
     //땅의 상태에 따라 농사를 할것
     public enum LandStatus
     {
@@ -26,7 +29,7 @@ public class Land : MonoBehaviour, ITimeTraker
     [Header("Crops")]
     public GameObject cropPrefab;
     //현재 땅에 심어진 작물
-    CropBehaviour cropPlanted = null;
+    public CropBehaviour cropPlanted = null;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +46,8 @@ public class Land : MonoBehaviour, ITimeTraker
     void Update()
     {
         print(Slot.isItemClicked);
+        LandPosition = new Vector3(transform.position.x, .08f, transform.position.z);
+       // print(LandPosition);
     }
 
     public void SwitchLandStatus(LandStatus statusToSwich)
@@ -112,18 +117,16 @@ public class Land : MonoBehaviour, ITimeTraker
         {
             if (landStatus != LandStatus.Grass && cropPlanted == null)
             {
-                print("누른거받아지니?" + inventory.slots[slot.index].item.count);
-                print("들어오나?");
-               // GameObject cropObject = Instantiate(slot.crop_Obj, transform);
+                // GameObject cropObject = Instantiate(slot.crop_Obj, transform);
                 // GameObject cropObject = Instantiate(inventory.slots[Clicked_slot.index].item.cropPrefab, transform);
                 //인벤토리에서 아이템이 있어서 여기가 실행됐을경우 아이템을 빼주고, 정보 최신화.
-               // inventory.slots[Clicked_slot.index].item.count--;
+                // inventory.slots[Clicked_slot.index].item.count--;
                 //inventory.UpdateSlotText(inventory.slots[Clicked_slot.index]);
 
-                slot.cropObject.transform.position = new Vector3(transform.position.x, .08f, transform.position.z);
+             //   slot.cropObject.transform.position = new Vector3(transform.position.x, .08f, transform.position.z);
                 //작물이 자라게 할당해주기
-                cropPlanted = slot.cropObject.GetComponent<CropBehaviour>();
-                cropPlanted.Plant(inventory.slots[slot.index].item); //현재 누른 식물의 인댁스 번호로 갈것.
+             //   cropPlanted = slot.cropObject.GetComponent<CropBehaviour>();
+             //   cropPlanted.Plant(inventory.slots[slot.index].item); //현재 누른 식물의 인댁스 번호로 갈것.
             }
         }
         else
@@ -153,5 +156,10 @@ public class Land : MonoBehaviour, ITimeTraker
                 SwitchLandStatus(LandStatus.Farmland);
             }
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        print(gameObject.name);
     }
 }

@@ -545,6 +545,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 1915825228}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -649,6 +650,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 1496421041}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 0}
   index: 0
@@ -1254,6 +1256,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 1366732912}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -1661,6 +1664,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 1123351950}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -2354,6 +2358,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 38166148}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 0}
   index: 0
@@ -2884,6 +2889,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 190025097}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -3445,6 +3451,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 1716160897}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -5390,6 +5397,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 1986592125}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -5806,6 +5814,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 2070497338}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -6710,6 +6719,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 52706076}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -6974,6 +6984,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 1616458821}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -7303,6 +7314,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 1817719478}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -9220,6 +9232,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 1260229799}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -9494,6 +9507,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 2142444557}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -10167,6 +10181,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 191030723}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 0}
   index: 0
@@ -10834,6 +10849,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 600145522}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -11754,6 +11770,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 373772323}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -11952,6 +11969,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 1193456265}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -12306,6 +12324,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 443951516}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 0}
   index: 0
@@ -12504,6 +12523,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 771226484}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -13494,6 +13514,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 790223689}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 0}
   index: 0
@@ -13598,6 +13619,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 515830361}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 0}
   index: 0
@@ -13889,6 +13911,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 2051115575}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -14960,6 +14983,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 673425579}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -15602,6 +15626,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 2030760866}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -16418,6 +16443,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 1293283396}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 0}
   index: 0
@@ -16522,6 +16548,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 1738155947}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 0}
   index: 0
@@ -16960,6 +16987,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 85261881}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -17186,6 +17214,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 199663005}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 0}
   index: 0
@@ -17935,6 +17964,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 517786525}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -18452,6 +18482,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 169230641}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 0}
   index: 0
@@ -18668,6 +18699,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 467696011}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -18866,6 +18898,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 2003452205}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -20495,6 +20528,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 1850772673}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -20772,6 +20806,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 6473402}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -21049,6 +21084,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 950690052}
   store: {fileID: 0}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0
@@ -21247,6 +21283,7 @@ MonoBehaviour:
     cropPrefab: {fileID: 0}
   image: {fileID: 278528717}
   store: {fileID: 1904504497}
+  crop_Obj: {fileID: 0}
   sellbtn: {fileID: 0}
   inventory: {fileID: 782491089}
   index: 0

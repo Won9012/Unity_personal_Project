@@ -54,7 +54,7 @@ public class CropBehaviour : MonoBehaviour
         int hoursToGrow = GameTimeStamp.DaysToHours(seedToGrow.daysToGrow);
         int MinuteToGrow = GameTimeStamp.HoursToMinutes(hoursToGrow);
 
-        MaxGrowth = GameTimeStamp.HoursToMinutes(MinuteToGrow); //테스트용 숫자
+        MaxGrowth = GameTimeStamp.DaysToHours(hoursToGrow); //테스트용 숫자
        // MaxGrowth = GameTimeStamp.HoursToMinutes(MinuteToGrow);
 
         SwichState(CropState.SEED);

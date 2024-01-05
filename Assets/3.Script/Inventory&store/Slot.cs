@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerClickHandler
+public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
 {
     Land land;
 
-    public GameObject cropObject;
+    private GameObject cropObject;
     public static bool isItemClicked = false;
+
 
     public enum SlotType
     {
@@ -43,7 +44,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerC
     }
     private void Awake()
     {
-
+        
     }
     private void Update()
     {
@@ -116,56 +117,84 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerC
         inventory.SwapSlots(thisSlotIndex, originSlotIndex);
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-      //  print(gameObject.name);
-    }
+
     //인벤토리에서 아이템을 눌렀을때 정보를 받아줄것@
     //인벤토리에서 눌렀을때는 인댁스번호를 가져와서 하고
     //퀵슬롯에서 눌렀을 때는 해당아이템이 있다면 가장 낮은 인댁스번호(인벤토리 가장 앞에있는녀석을 우선사용)
+
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(slotType == SlotType.Inventory)
+        if (slotType == SlotType.Inventory)
         {
             //우선 클릭했을때 아이템이 있으면 마우스포인터에 띄워주고 , 없으면 리턴
-            if (inventory.slots[index].item.count >= 0)
+            if (inventory.slots[index].item.count >= 0 && !isItemClicked)
             {
                 isItemClicked = true;
-                print(inventory.slots[index].item.name);
+                //print(inventory.slots[index].item.name);
                 cropObject = Instantiate(inventory.slots[index].item.cropPrefab, transform);
-                //클릭후 땅에 클릭하면 아이템 생성은 Land에서 해줌
-                //여기서는 인벤토리 슬롯을 눌렀을때 그 슬롯에 씨앗 아이템이 있다면 화면에 띄워줄것
-
-                if (Input.GetKeyDown(KeyCode.Escape)) isItemClicked = false;
-
+                StartCoroutine(MovePrefab());
             }
         }
-        else
-        {
-            isItemClicked = false; 
-        }
-
     }
 
     public IEnumerator MovePrefab()
     {
-        yield return new WaitForSeconds(0.1f);
-        while (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Escape))
-        {
 
+        yield return new WaitForSeconds(0.1f);
+        Ray ray ;
+        RaycastHit hit;
+        while (isItemClicked)
+        {
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray,out hit, Mathf.Infinity))
+            {
+                //print("힛포인트 " + hit.point);
+                cropObject.transform.position = hit.point;
+
+                GameObject hitObject = hit.collider.gameObject;
+                if (hitObject.CompareTag("Land") && Input.GetMouseButtonDown(0))
+                {
+                    Land land = hitObject.GetComponent<Land>();
+                    if(land.landStatus == Land.LandStatus.Grass)//tlqkf dhodksehl
+                    {
+                        isItemClicked = false;
+                        Destroy(cropObject);
+                    }
+                    else if (land.landStatus != Land.LandStatus.Grass && land.cropPlanted == null)
+                    {
+                        print("들어오니?");
+                       // cropObject.transform.position = hit.point; 
+                        cropObject.transform.position =  new Vector3(hitObject.transform.position.x, .08f, hitObject.transform.position.z);
+                        land.cropPlanted = cropObject.GetComponent<CropBehaviour>();
+                        land.cropPlanted.Plant(inventory.slots[index].item);
+                        isItemClicked = false;
+                    }
+                }
+                else if(!hit.collider.CompareTag("Land") && Input.GetMouseButtonDown(0))
+                {
+                    isItemClicked = false;
+                    Destroy(cropObject);
+                    yield return null;
+                }
+            }
+            yield return null; // 다음 프레임으로 넘어감
         }
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = 10f; // 임의의 z 값 설정
-        cropObject.transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
+
     }
 
+    void DrawRayGizmo(Ray ray, float length)
+    {
+        Gizmos.DrawLine(ray.origin,ray.origin +ray.direction * length);
+    }
 
-/*    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    RaycastHit hit;
+    void OnDrawGizmos()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            OnInteractableHit(hit);
-}*/
-
+            DrawRayGizmo(ray, hit.distance);
+        }
+    }
 }

@@ -54,8 +54,8 @@ public class GameTimeStamp
 
     public void UpdateTime()
     {
-        second++;
-
+        //second++;
+        minute++;
         if(second >= 60)
         {
             second = 0;
