@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class CropBehaviour : MonoBehaviour
 {
-    SeedData seedToGrow;
+    ItemProperty seedToGrow;
 
     [Header("Seed LifeTime")]
     public GameObject seed;
     public GameObject seedling;
     public GameObject harvestabe; // 수확가능
 
+    //아이템을 심었을때, 프리팹을 생성
+    //프리팹구조는 
+    //Crop (부모)
+    //seed , seeding , harvestable(자식)
+    //자식에서 순서에 맞게 진행할것.
+    //입력받는 seedToGrow 는 day기반의 단위
+    //따라서, 심기시작한 시점에서 
+
+    private void Update()
+    {
+        print(MaxGrowth);
+        print(growth);
+    }
 
     int growth;
     int MaxGrowth;
@@ -22,28 +35,32 @@ public class CropBehaviour : MonoBehaviour
     //씨앗을 심고 시간에 따라 자랄때 상태 부여
     public CropState cropState;
 
-    public void Plant(SeedData seedToGrow)
+    public void Plant(ItemProperty seedToGrow)
     {
         //씨앗 지정
         this.seedToGrow = seedToGrow;
 
         //심는 작물 생성
-        seedling = Instantiate(seedToGrow.seeding, transform);
-        //Access the crop item data
-        ItemData cropToYield = seedToGrow.cropToYield;
-
+/*        seed_prefab = Instantiate(seed_prefab, transform);
+        
+        //중간과정
+        seedling_prefab = Instantiate(seedling_prefab, transform);
+        seedling_prefab.transform.position = seed_prefab.transform.position;
         //다자란애 생성
-        harvestabe = Instantiate(cropToYield.gameModel, transform);
-
-        //일단위 => 시간단위
-        int hoursToGrow = GameTimeStamp.DaysToHours(seedToGrow.daysToGrow);
+        harvestabe_prefab = Instantiate(harvestabe_prefab, transform);
+        harvestabe_prefab.transform.position = seed_prefab.transform.position;*/
+        
         //시간단위 => 분단위
-        MaxGrowth = GameTimeStamp.HoursToMinutes(hoursToGrow);
-        //분단위 => 초단위
+        int hoursToGrow = GameTimeStamp.DaysToHours(seedToGrow.daysToGrow);
+        int MinuteToGrow = GameTimeStamp.HoursToMinutes(hoursToGrow);
+
+        MaxGrowth = GameTimeStamp.HoursToMinutes(MinuteToGrow); //테스트용 숫자
+       // MaxGrowth = GameTimeStamp.HoursToMinutes(MinuteToGrow);
 
         SwichState(CropState.SEED);
     }
 
+    //심으면 자라게 할꺼임
     public void Grow()
     {
         growth++;
@@ -53,8 +70,6 @@ public class CropBehaviour : MonoBehaviour
         {
             SwichState(CropState.SEEDLING);
         }
-
-
         if(growth >= MaxGrowth && cropState == CropState.SEEDLING)
         {
             SwichState(CropState.HARVESTABLE);
@@ -63,7 +78,7 @@ public class CropBehaviour : MonoBehaviour
 
     private void SwichState(CropState stateToSwich)
     {
-        //초기 상태 셋팅
+        //시간이 지남에 따라 변경, 물을 줄때도 변경.
         seed.SetActive(false);
         seedling.SetActive(false);
         harvestabe.SetActive(false);

@@ -541,8 +541,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 1915825228}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -645,8 +645,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 1496421041}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -1250,8 +1250,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 1366732912}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -1657,8 +1657,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 1123351950}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -2350,8 +2350,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 38166148}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -2880,8 +2880,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 190025097}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -3441,8 +3441,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 1716160897}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -4771,30 +4771,30 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: "\uB098\uBB34 \uBC8C\uBAA9 \uB3C4\uAD6C"
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   - name: "\uACE1\uAD2D\uC774"
     sprite: {fileID: 21300000, guid: 8243fc8ee4f8cdd4ba33cb388e773fe4, type: 2}
     cost: 300
     count: 0
     Description: "\uB545\uC744 \uAC08\uC544\uBC84\uB9AC\uB294 \uACE1\uAD2D\uC774"
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   - name: "\uC0BD"
     sprite: {fileID: 21300000, guid: db30add56f4561a4ca50db547bcc5c37, type: 2}
     cost: 300
     count: 0
     Description: "\uC791\uBB3C\uC744 \uC218\uD655\uD558\uB294\uB300 \uC4F0\uB294
       \uC0BD"
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   - name: "\uBB3C\uBFCC\uB9AC\uAC1C"
     sprite: {fileID: 21300000, guid: fa6ca4b2ab3237f40b321b30c47bb74f, type: 3}
     cost: 300
     count: 0
     Description: "\uC791\uBB3C \uC0DD\uC0B0 \uC18D\uB3C4 \uD5A5\uC0C1"
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   itemType: 1
 --- !u!4 &459535511
 Transform:
@@ -5386,8 +5386,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 1986592125}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -5802,8 +5802,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 2070497338}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -6706,8 +6706,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 52706076}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -6970,8 +6970,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 1616458821}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -7299,8 +7299,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 1817719478}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -9216,8 +9216,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 1260229799}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -9490,8 +9490,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 2142444557}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -10163,8 +10163,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 191030723}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -10830,8 +10830,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 600145522}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -11750,8 +11750,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 373772323}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -11948,8 +11948,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 1193456265}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -12029,44 +12029,44 @@ MonoBehaviour:
     count: 0
     Description: "\uB098\uBB34\uB97C \uD0A4\uC6CC \uBAA9\uC7AC\uB97C \uC5BB\uC744
       \uC218 \uC788\uB2E4"
-    cropToYield: 5
-    seeding: {fileID: 0}
+    daysToGrow: 5
+    cropPrefab: {fileID: 0}
   - name: "\uAC00\uC9C0"
     sprite: {fileID: 21300000, guid: 2df1df31095e30f4eba0a0d9b11ee2cc, type: 3}
     cost: 100
     count: 0
     Description: "\uB9DB\uC5C6\uACE0 \uC601\uC591\uC774 \uD48D\uBD80\uD55C \uAC00\uC9C0"
-    cropToYield: 3
-    seeding: {fileID: 0}
+    daysToGrow: 3
+    cropPrefab: {fileID: 0}
   - name: "\uC21C\uBB34"
     sprite: {fileID: 21300000, guid: 6d698ca580ed40f46936afa68c7492a7, type: 3}
     cost: 200
     count: 0
     Description: "\uB2EC\uCF64\uD55C \uBFCC\uB9AC\uCC44\uC18C..?"
-    cropToYield: 3
-    seeding: {fileID: 0}
+    daysToGrow: 3
+    cropPrefab: {fileID: 2670774451695662418, guid: 4852285c96726a648b7c9e9e6e852b62, type: 3}
   - name: "\uC625\uC218\uC218"
     sprite: {fileID: 21300000, guid: 44498231670d15141831cf88bf16fcb6, type: 3}
     cost: 150
     count: 0
     Description: "\uCF58\uCE58\uC988 \uD574\uBA39\uC73C\uBA74 \uB9DB\uC788\uB294
       \uC625\uC218\uC218"
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 3
+    cropPrefab: {fileID: 0}
   - name: "\uD1A0\uB9C8\uD1A0"
     sprite: {fileID: 21300000, guid: 46b69102426116848a67585e77523a82, type: 3}
     cost: 250
     count: 0
     Description: "\uD1A0\uB9C8\uD1A0\uB294 \uAC70\uAFB8\uB85C \uD574\uB3C4 \uD1A0\uB9C8\uD1A0"
-    cropToYield: 3
-    seeding: {fileID: 0}
+    daysToGrow: 3
+    cropPrefab: {fileID: 0}
   - name: "\uD638\uBC15"
     sprite: {fileID: 21300000, guid: fcc813065fd67254fb342bf6d2c8ca19, type: 3}
     cost: 300
     count: 0
     Description: "\uC2EC\uC73C\uBA74 \uAC70\uB300\uD574\uC9C0\uB294 \uD638\uBC15"
-    cropToYield: 4
-    seeding: {fileID: 0}
+    daysToGrow: 3
+    cropPrefab: {fileID: 0}
   itemType: 0
 --- !u!4 &1244729525
 Transform:
@@ -12302,8 +12302,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 443951516}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -12500,8 +12500,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 771226484}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -13490,8 +13490,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 790223689}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -13594,8 +13594,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 515830361}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -13885,8 +13885,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 2051115575}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -14956,8 +14956,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 673425579}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -15598,8 +15598,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 2030760866}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -16414,8 +16414,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 1293283396}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -16518,8 +16518,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 1738155947}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -16956,8 +16956,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 85261881}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -17182,8 +17182,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 199663005}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -17714,7 +17714,7 @@ MonoBehaviour:
     hour: 12
     minute: 0
     second: 0
-  timeScale: 15000
+  timeScale: 20
   sunTransform: {fileID: 1543347726}
 --- !u!1 &1904504495
 GameObject:
@@ -17931,8 +17931,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 517786525}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -18448,8 +18448,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 169230641}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -18664,8 +18664,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 467696011}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -18862,8 +18862,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 2003452205}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -20491,8 +20491,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 1850772673}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -20768,8 +20768,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 6473402}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}
@@ -21045,8 +21045,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 950690052}
   store: {fileID: 0}
   sellbtn: {fileID: 0}
@@ -21243,8 +21243,8 @@ MonoBehaviour:
     cost: 0
     count: 0
     Description: 
-    cropToYield: 0
-    seeding: {fileID: 0}
+    daysToGrow: 0
+    cropPrefab: {fileID: 0}
   image: {fileID: 278528717}
   store: {fileID: 1904504497}
   sellbtn: {fileID: 0}

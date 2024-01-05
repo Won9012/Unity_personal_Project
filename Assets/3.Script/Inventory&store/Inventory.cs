@@ -37,7 +37,7 @@ public class Inventory : MonoBehaviour
             slots.Add(slot);
         }
     }
-    void UpdateSlotText(Slot slot)
+    public void UpdateSlotText(Slot slot)
     {
         itemCount_txt[slot.index].text = slot.item.count.ToString();
     }

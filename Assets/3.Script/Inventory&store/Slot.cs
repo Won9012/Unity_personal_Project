@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerClickHandler
 {
+    Land land;
+
+    public GameObject cropObject;
+    public static bool isItemClicked = false;
+
     public enum SlotType
     {
         Store, Inventory,Tools
@@ -17,7 +22,9 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerC
     public ItemProperty item;
     public Image image;
     public Store store;
-    
+    public GameObject crop_Obj;
+
+
     public Button sellbtn;
 
     
@@ -35,6 +42,10 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerC
         clicked = value;
     }
     private void Awake()
+    {
+
+    }
+    private void Update()
     {
 
     }
@@ -58,6 +69,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerC
                 Transform parentTransform = gameObject.transform;
                 image.enabled = true;
                 image.sprite = item.sprite;
+                crop_Obj = item.cropPrefab;
                 if (parentTransform.childCount > 0)
                 {
                     // 첫 번째 자식에 접근
@@ -108,7 +120,6 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerC
     {
       //  print(gameObject.name);
     }
-
     //인벤토리에서 아이템을 눌렀을때 정보를 받아줄것@
     //인벤토리에서 눌렀을때는 인댁스번호를 가져와서 하고
     //퀵슬롯에서 눌렀을 때는 해당아이템이 있다면 가장 낮은 인댁스번호(인벤토리 가장 앞에있는녀석을 우선사용)
@@ -116,14 +127,45 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerC
     {
         if(slotType == SlotType.Inventory)
         {
-            
-            print(gameObject.name);
-            foreach (var slot in inventory.slots)
+            //우선 클릭했을때 아이템이 있으면 마우스포인터에 띄워주고 , 없으면 리턴
+            if (inventory.slots[index].item.count >= 0)
             {
-           //     print(slot.item.name);
-             //   print(slot.item.count);
+                isItemClicked = true;
+                print(inventory.slots[index].item.name);
+                cropObject = Instantiate(inventory.slots[index].item.cropPrefab, transform);
+                //클릭후 땅에 클릭하면 아이템 생성은 Land에서 해줌
+                //여기서는 인벤토리 슬롯을 눌렀을때 그 슬롯에 씨앗 아이템이 있다면 화면에 띄워줄것
+
+                if (Input.GetKeyDown(KeyCode.Escape)) isItemClicked = false;
+
             }
+        }
+        else
+        {
+            isItemClicked = false; 
         }
 
     }
+
+    public IEnumerator MovePrefab()
+    {
+        yield return new WaitForSeconds(0.1f);
+        while (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Escape))
+        {
+
+        }
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = 10f; // 임의의 z 값 설정
+        cropObject.transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
+    }
+
+
+/*    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            OnInteractableHit(hit);
+}*/
+
 }

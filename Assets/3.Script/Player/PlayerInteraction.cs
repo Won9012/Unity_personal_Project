@@ -15,24 +15,6 @@ public class PlayerInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-/*        RaycastHit hit;
-        if(Physics.Raycast(transform.position,Vector3.down,out hit, 1))
-        {
-            OninteractableHit(hit);
-        }
-*/
-        // Check if the left mouse button is pressed
-/*        if (Input.GetMouseButtonDown(0))
-        {
-            // Cast a ray from the mouse position
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-            {
-                OnInteractableHit(hit);
-            }
-        }*/
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -59,26 +41,6 @@ public class PlayerInteraction : MonoBehaviour
             selectedLand = null;
         }
     }
-
-    //상호 작용 raycast가 부딪힐 떄 발생하는 일 처리 
-    void OninteractableHit(RaycastHit hit)
-    {
-        Collider other = hit.collider;
-        //print(other);
-        if(other.tag == "Land")
-        {
-            Land land = other.GetComponent<Land>();
-            SelectLand(land);
-            return;
-        }
-
-        if(selectedLand != null)
-        {
-            selectedLand.Select(false);
-            selectedLand = null;
-        }
-    }
-
     void SelectLand(Land land)
     {
         if (selectedLand != null)

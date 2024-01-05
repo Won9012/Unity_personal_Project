@@ -11,11 +11,14 @@ public class ItemProperty
     public int count = 0;
     public string Description;
 
-    public int cropToYield;
-    public GameObject seeding;
+    public int daysToGrow;
+    public GameObject cropPrefab;
+
+    ItemType itemType;
 }
 
 public enum ItemType
 {
     SEED, Equipment
 }
+

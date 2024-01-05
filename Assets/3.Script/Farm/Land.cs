@@ -5,6 +5,7 @@ using UnityEngine;
 public class Land : MonoBehaviour, ITimeTraker
 {
     [SerializeField] Inventory inventory;
+    Slot slot;
     //땅의 상태에 따라 농사를 할것
     public enum LandStatus
     {
@@ -21,7 +22,6 @@ public class Land : MonoBehaviour, ITimeTraker
 
     //물뿌린 타일은 시간이 지나면 다시 farm으로 바꿔줄것..
     GameTimeStamp timeWatered;
-
 
     [Header("Crops")]
     public GameObject cropPrefab;
@@ -42,7 +42,7 @@ public class Land : MonoBehaviour, ITimeTraker
     // Update is called once per frame
     void Update()
     {
-        
+        print(Slot.isItemClicked);
     }
 
     public void SwitchLandStatus(LandStatus statusToSwich)
@@ -75,14 +75,13 @@ public class Land : MonoBehaviour, ITimeTraker
 
     public void Interact(Tools.ToolType toolType)
     {
-        //interation
-     //   SwitchLandStatus(LandStatus.Farmland);
-
+        //장비 아이템을 바꾸는 로직
         switch (toolType)
         {
             case Tools.ToolType.Axe:
                 break;
             case Tools.ToolType.Pick:
+                if (landStatus == LandStatus.waterd) return;
                 SwitchLandStatus(LandStatus.Farmland);
                 break;
             case Tools.ToolType.Hoe:
@@ -94,6 +93,8 @@ public class Land : MonoBehaviour, ITimeTraker
             default:
                 break;
         }
+
+        //Slot에서 클릭 이벤트 정보를 받아와 , 프리팹을 생성하는 로직.
         //장비 상태로 준비를 채크 할것 , 씨앗의 상태를 체크 할 필요는 없음
         //return;
         //0.인벤토리에 씨앗이 있는지 확인 하고, 씨앗이 있을때만 생성하기
@@ -107,22 +108,28 @@ public class Land : MonoBehaviour, ITimeTraker
         //       퀵슬롯에서 마우스로 누르거나, 단축키를 눌렀을 경우 마우스의 위치에 설치할 수 있는 아이템 설치 (Raycast 활성화)
         //       슬롯에서 눌렀을때 아이템이 화면상에 보이게하고, 한번더 누르면 설치, esc를 누르면 취소 
 
-
-        print(inventory.slots[2].item.name);
-
-        if (toolType == Tools.ToolType.Hoe && landStatus != LandStatus.Grass && cropPlanted == null)
+        if (Input.GetMouseButtonDown(0) && Slot.isItemClicked)
         {
-            print("들어오나?");
-            GameObject cropObject = Instantiate(cropPrefab, transform);
-            cropObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            if (landStatus != LandStatus.Grass && cropPlanted == null)
+            {
+                print("누른거받아지니?" + inventory.slots[slot.index].item.count);
+                print("들어오나?");
+               // GameObject cropObject = Instantiate(slot.crop_Obj, transform);
+                // GameObject cropObject = Instantiate(inventory.slots[Clicked_slot.index].item.cropPrefab, transform);
+                //인벤토리에서 아이템이 있어서 여기가 실행됐을경우 아이템을 빼주고, 정보 최신화.
+               // inventory.slots[Clicked_slot.index].item.count--;
+                //inventory.UpdateSlotText(inventory.slots[Clicked_slot.index]);
 
-            //작물이 자라게 할당해주기
-            cropPlanted = cropObject.GetComponent<CropBehaviour>();
-            //cropPlanted.Plant();
-
-
+                slot.cropObject.transform.position = new Vector3(transform.position.x, .08f, transform.position.z);
+                //작물이 자라게 할당해주기
+                cropPlanted = slot.cropObject.GetComponent<CropBehaviour>();
+                cropPlanted.Plant(inventory.slots[slot.index].item); //현재 누른 식물의 인댁스 번호로 갈것.
+            }
         }
-        
+        else
+        {
+            //todo : 심을수 없는 상태일 경우 , 작물을 심을 수 없습니다 !! UI 띄워주자.
+        }
     }
 
     public void ClockUpdate(GameTimeStamp timeStamp)
