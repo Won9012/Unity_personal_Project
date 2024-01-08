@@ -7,11 +7,14 @@ public class RideCar : MonoBehaviour
     [SerializeField] private GameObject middle;
     [SerializeField] private GameObject Ride_btn;
 
-
-    //차를 타지 않은 상황에서 차근처에 접근을 했을때 상황
-    private void OnTriggerEnter(Collider other)
+    private void Awake()
     {
-        if (other.CompareTag("Player"))
+        Ride_btn.SetActive(false);
+    }
+    //차를 타지 않은 상황에서 차근처에 접근을 했을때 상황
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player") && !CarManager.isRide)
         {
             Ride_btn.SetActive(true);
         }

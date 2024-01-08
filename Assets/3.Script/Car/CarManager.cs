@@ -5,7 +5,8 @@ using UnityEngine;
 public class CarManager : MonoBehaviour
 {
     //타기버튼 (타기전상황)
-    [SerializeField] private GameObject Ride_btn;
+    [SerializeField] private GameObject RideOn_btn;
+    [SerializeField] private GameObject RideOff_btn;
     [SerializeField] private PlayerMove player_m;
     [SerializeField] private CarMove carMove;
     [SerializeField] private Rigidbody player_rb;
@@ -23,18 +24,19 @@ public class CarManager : MonoBehaviour
     //
     private void Update()
     {
-        if (isRide)
-        {
-            Riding_UI.SetActive(true);
-        }
         if (!isRide)
         {
-            Riding_UI.SetActive(false);
+            RideOff_btn.SetActive(false);
+        }
+        else
+        {
+            RideOn_btn.SetActive(false);
         }
     }
     public void Click_RideOn_btn()
     {
         isRide = true;
+        RideOff_btn.SetActive(true);
         player_m.transform.position = new Vector3(middle.transform.position.x, middle.transform.position.y +0.3f, middle.transform.position.z);
         player_m.transform.rotation = Quaternion.Euler(0, 90f, 0f);
         player.transform.parent = middle.transform;
@@ -44,7 +46,6 @@ public class CarManager : MonoBehaviour
         car_rb.isKinematic = false;
         player_m.enabled = false;
         carMove.enabled = true;
-        Ride_btn.SetActive(false);
         player_anim.SetBool("isWalk", false);
 
     }
@@ -52,6 +53,7 @@ public class CarManager : MonoBehaviour
     public void Click_RideOff_btn()
     {
         isRide = false;
+        RideOff_btn.SetActive(false);
         player_m.transform.position = new Vector3(middle.transform.position.x, middle.transform.position.y, middle.transform.position.z -2f);
         player_m.enabled = true;
         player.transform.parent = null;
@@ -60,7 +62,6 @@ public class CarManager : MonoBehaviour
         car_rb.useGravity = false;
         car_rb.isKinematic = true;
         carMove.enabled = false;
-        Ride_btn.SetActive(false);
     }
 
 }
