@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   seed: {fileID: 5569267359760496833}
-  seedling: {fileID: 0}
+  seedling: {fileID: 6028835224895819625}
   harvestabe: {fileID: 312471436178282121}
   Triger_Colider: {fileID: 8392723296467959817}
   Haves_ItemBuffer: {fileID: 0}
@@ -211,6 +211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73e30e68c877c0a41b9b914c556cb3a6, type: 3}
+--- !u!1 &6028835224895819625 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1139572726157748, guid: 73e30e68c877c0a41b9b914c556cb3a6, type: 3}
+  m_PrefabInstance: {fileID: 6029956918713179869}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6026046981472971945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4050686539739764, guid: 73e30e68c877c0a41b9b914c556cb3a6, type: 3}
