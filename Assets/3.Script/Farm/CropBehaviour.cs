@@ -13,6 +13,7 @@ public class CropBehaviour : MonoBehaviour
     public GameObject seedling;
     public GameObject harvestabe; // 수확가능
     public Collider Triger_Colider;
+    public GameObject Havas_obj;
     public ItemBuffer Haves_ItemBuffer;
 
     //아이템을 심었을때, 프리팹을 생성
@@ -26,7 +27,7 @@ public class CropBehaviour : MonoBehaviour
     private void Awake()
     {
         // 이게 왜 되는거지? ; => 오브젝트 순서 마지막에 있는애 찾네 
-        Haves_ItemBuffer = GameObject.FindObjectOfType<ItemBuffer>(); 
+        Haves_ItemBuffer = GameObject.FindObjectOfType<ItemBuffer>();
         print(Haves_ItemBuffer.items[1].name);
         inventory = GameObject.FindObjectOfType<Inventory>();
     }

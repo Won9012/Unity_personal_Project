@@ -29,6 +29,11 @@ public class Inventory : MonoBehaviour
 
     }
 
+    private void ToogleInventroy()
+    {
+
+    }
+
     private void GetSlotIdx()
     {
         int slotCnt = rootSlot.childCount;

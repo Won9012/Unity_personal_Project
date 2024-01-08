@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private RectTransform rectTransform;
+    public RectTransform rectTransform;
     public Image image;
 
 
