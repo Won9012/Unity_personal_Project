@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     private Animator anim;
 
     [SerializeField] private float Walk_Speed = 5f;
-    private float MoveSpeed;
+    [SerializeField] private float EquiptedBackpackWalk_Speed = 2f;
     [SerializeField] private float RotationSpeed = 3f;
 
     [Header("Camera")]
@@ -20,11 +20,17 @@ public class PlayerMove : MonoBehaviour
     //Interaction components
     PlayerInteraction playerInteraction;
 
+    public  enum EquipedBackpack
+    {
+        NotEquiped, Equiped
+    }
+
+    public EquipedBackpack equipedBackpack;
+
     private void Awake()
     {
         TryGetComponent(out anim);
         camera = Camera.main;
-        MoveSpeed = Walk_Speed;
         playerInteraction = GetComponentInChildren<PlayerInteraction>();
     }
 
@@ -80,12 +86,16 @@ public class PlayerMove : MonoBehaviour
                 RotationSpeed * Time.deltaTime
             );
         }
-        transform.position += moveDirection * MoveSpeed * Time.deltaTime;
-    }
 
-    private void Ride_Car()
-    {
-        
+        //백팩을 끼고 있다면 이동속도 느리게 => 백팩은 아이템 조합해서 무역상품
+        if(Tools.toolType != Tools.ToolType.EquipedBackpack)
+        {
+            transform.position += moveDirection * Walk_Speed * Time.deltaTime;
+        }
+        else if(Tools.toolType == Tools.ToolType.EquipedBackpack)
+        {
+            transform.position += moveDirection * EquiptedBackpackWalk_Speed * Time.deltaTime;
+        }
+       
     }
-
 }

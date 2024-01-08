@@ -10,6 +10,7 @@ public class CropBehaviour : MonoBehaviour
     public GameObject seed;
     public GameObject seedling;
     public GameObject harvestabe; // 수확가능
+    public Collider Triger_Colider;
 
     //아이템을 심었을때, 프리팹을 생성
     //프리팹구조는 
@@ -21,8 +22,8 @@ public class CropBehaviour : MonoBehaviour
 
     private void Update()
     {
-        print(MaxGrowth);
-        print(growth);
+       // print(MaxGrowth);
+       // print(growth);
     }
 
     int growth;
@@ -93,6 +94,7 @@ public class CropBehaviour : MonoBehaviour
                 break;
             case CropState.HARVESTABLE:
                 harvestabe.SetActive(true);
+                Triger_Colider.enabled = true;
                 break;
             default:
                 break;
@@ -101,4 +103,29 @@ public class CropBehaviour : MonoBehaviour
         //현재 작물의 상태 변경
         cropState = stateToSwich;
     }
+/*    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && cropState == CropState.HARVESTABLE)
+        {
+            print("ㅎㅇ");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                print("ㅎ 2");
+            }
+            
+        }
+    }*/
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player") && cropState == CropState.HARVESTABLE)
+        {
+            print("ㅎㅇ");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                print("ㅎ 2");
+            }
+
+        }
+    }
+
 }

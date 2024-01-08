@@ -11,7 +11,6 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
     private GameObject cropObject;
     public static bool isItemClicked = false;
 
-
     public enum SlotType
     {
         Store, Inventory,Tools
@@ -139,8 +138,6 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
 
     public IEnumerator MovePrefab()
     {
-
-        yield return new WaitForSeconds(0.1f);
         Ray ray ;
         RaycastHit hit;
         while (isItemClicked)
@@ -148,7 +145,6 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray,out hit, Mathf.Infinity))
             {
-                //print("힛포인트 " + hit.point);
                 cropObject.transform.position = hit.point;
 
                 GameObject hitObject = hit.collider.gameObject;
@@ -163,7 +159,8 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
                     else if (land.landStatus != Land.LandStatus.Grass && land.cropPlanted == null)
                     {
                         print("들어오니?");
-                       // cropObject.transform.position = hit.point; 
+                        cropObject.transform.SetParent(null);
+                        cropObject.transform.SetParent(hitObject.transform);
                         cropObject.transform.position =  new Vector3(hitObject.transform.position.x, .08f, hitObject.transform.position.z);
                         land.cropPlanted = cropObject.GetComponent<CropBehaviour>();
                         land.cropPlanted.Plant(inventory.slots[index].item);

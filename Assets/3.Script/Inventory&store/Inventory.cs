@@ -25,6 +25,8 @@ public class Inventory : MonoBehaviour
         store.Buy_items += BuyItem;
         GetSlotIdx();
         gameObject.SetActive(false);
+
+
     }
 
     private void GetSlotIdx()
@@ -87,6 +89,27 @@ public class Inventory : MonoBehaviour
         }
 
     }
+    //다자란 아이템을 수확했을때 아이템 셋팅.
+    public void GetItem(ItemProperty item)
+    {
+        var emptySlot = slots.Find(t => t.item == null || t.item.name == string.Empty);
+        var SameItem = slots.Find(t => t.item != null && t.item.name == item.name && t.item.count != MaxStack);
+
+        //인벤토리에 아이템이 없을경우 
+        if(emptySlot != null && SameItem == null)
+        {
+            emptySlot.Setitem(item, emptySlot.index);
+            emptySlot.item.count++;
+            UpdateSlotText(emptySlot);
+        }
+        else
+        {
+            //인벤토리에 아이템이 있을 경우
+            SameItem.item.count++;
+        }
+        
+    }
+
 
     //swap시 필요한것?
     //1.드랍이 입력되면 타겟 슬롯과 드래깅 슬롯의 위치를 바꿀것

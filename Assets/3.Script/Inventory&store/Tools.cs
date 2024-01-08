@@ -18,12 +18,16 @@ public class Tools : MonoBehaviour
 
     public Image StatusImage;
 
+    public GameObject[] Tool_items;
+
+    public Sprite BackPack;
+
     public enum ToolType
     {
-        Empty,Axe, Pick, Water, Hoe
+        Empty,Axe, Pick, Water, Hoe , EquipedBackpack
     }
 
-    public static ToolType toolType;
+    public static ToolType toolType = ToolType.Empty;
 
     private void Start()
     {
@@ -68,24 +72,72 @@ public class Tools : MonoBehaviour
         StatusImage.sprite = slots[0].item.sprite;
         StatusImage.enabled = true;
         toolType = ToolType.Axe;
-
+        for (int i = 0; i < Tool_items.Length; i++)
+        {
+            if(Tool_items[i].name == "Axe")
+            {
+                Tool_items[i].SetActive(true);
+            }
+            else
+            {
+                Tool_items[i].SetActive(false);
+            }
+        }
     }
     public void Get_pick()
     {
         StatusImage.sprite = slots[1].item.sprite;
         StatusImage.enabled = true;
         toolType = ToolType.Pick;
+        for (int i = 0; i < Tool_items.Length; i++)
+        {
+            if (Tool_items[i].name == "Pick")
+            {
+                Tool_items[i].SetActive(true);
+            }
+            else
+            {
+                Tool_items[i].SetActive(false);
+            }
+        }
     }
     public void Get_hoe()
     {
         StatusImage.sprite = slots[2].item.sprite;
         StatusImage.enabled = true;
         toolType = ToolType.Hoe;
+        for (int i = 0; i < Tool_items.Length; i++)
+        {
+            if (Tool_items[i].name == "Hoe")
+            {
+                Tool_items[i].SetActive(true);
+            }
+            else
+            {
+                Tool_items[i].SetActive(false);
+            }
+        }
     }
     public void Get_Water()
     {
         StatusImage.sprite = slots[3].item.sprite;
         StatusImage.enabled = true;
         toolType = ToolType.Water;
+        for (int i = 0; i < Tool_items.Length; i++)
+        {
+            if (Tool_items[i].name == "Water")
+            {
+                Tool_items[i].SetActive(true);
+            }
+            else
+            {
+                Tool_items[i].SetActive(false);
+            }
+        }
+    }
+
+    public void Get_Backpack()
+    {
+        //무역 아이템을 얻었을 때 백팩 활성화 및 이미지 교체작업해줄것
     }
 }
