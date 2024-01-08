@@ -6,11 +6,14 @@ public class CropBehaviour : MonoBehaviour
 {
     ItemProperty seedToGrow;
 
+    public Inventory inventory;
+
     [Header("Seed LifeTime")]
     public GameObject seed;
     public GameObject seedling;
     public GameObject harvestabe; // 수확가능
     public Collider Triger_Colider;
+    public ItemBuffer Haves_ItemBuffer;
 
     //아이템을 심었을때, 프리팹을 생성
     //프리팹구조는 
@@ -20,10 +23,18 @@ public class CropBehaviour : MonoBehaviour
     //입력받는 seedToGrow 는 day기반의 단위
     //따라서, 심기시작한 시점에서 
 
+    private void Awake()
+    {
+        // 이게 왜 되는거지? ; => 오브젝트 순서 마지막에 있는애 찾네 
+        Haves_ItemBuffer = GameObject.FindObjectOfType<ItemBuffer>(); 
+        print(Haves_ItemBuffer.items[1].name);
+        inventory = GameObject.FindObjectOfType<Inventory>();
+    }
+
     private void Update()
     {
-       // print(MaxGrowth);
-       // print(growth);
+        // print(MaxGrowth);
+        // print(growth);.
     }
 
     int growth;
@@ -117,14 +128,18 @@ public class CropBehaviour : MonoBehaviour
     }*/
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && cropState == CropState.HARVESTABLE)
+        if (other.CompareTag("Player") && cropState == CropState.HARVESTABLE && Input.GetKeyDown(KeyCode.Space))
         {
-            print("ㅎㅇ");
-            if (Input.GetKeyDown(KeyCode.Space))
+             print("들어오냐?");
+            for (int i = 0; i < Haves_ItemBuffer.items.Count; i++)
             {
-                print("ㅎ 2");
+                if(Haves_ItemBuffer.items[i].name == gameObject.transform.GetChild(2).name)
+                {
+                    inventory.GetItem(Haves_ItemBuffer.items[i]);
+                    Destroy(gameObject);
+                }
             }
-
+            
         }
     }
 

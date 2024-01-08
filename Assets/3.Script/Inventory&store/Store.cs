@@ -116,7 +116,6 @@ public class Store : MonoBehaviour
         if (Buy_items != null && GetItemCountFromUser() != 0)
         {
             Buy_items(slot.item, GetItemCountFromUser());
-            print("¹¹»ç³Ä@@@ : " + slot.item.name);
             int itemCount = slot.item.count;
         }
         else

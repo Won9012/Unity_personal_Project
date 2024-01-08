@@ -14,11 +14,11 @@ public class ItemProperty
     public int daysToGrow;
     public GameObject cropPrefab;
 
-    ItemType itemType;
+    public ItemType itemType;
 }
 
 public enum ItemType
 {
-    SEED, Equipment
+    SEED, Equipment, Harvestable
 }
 

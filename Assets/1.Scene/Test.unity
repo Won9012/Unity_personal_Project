@@ -543,6 +543,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 1915825228}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -648,6 +649,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 1496421041}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -1254,6 +1256,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 1366732912}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -1662,6 +1665,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 1123351950}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -1717,7 +1721,7 @@ GameObject:
   - component: {fileID: 114180138}
   - component: {fileID: 114180139}
   m_Layer: 0
-  m_Name: HavastBuffer
+  m_Name: HvastBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1757,13 +1761,55 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
-  - name: Turnip
+    itemType: 0
+  - name: Turnip_Harvestabe
     sprite: {fileID: 21300000, guid: 61c73a42e56fa7f43bee7ed1ded24228, type: 3}
     cost: 0
     count: 0
     Description: 
     daysToGrow: 0
-    cropPrefab: {fileID: 0}
+    cropPrefab: {fileID: 2670774451695662418, guid: 4852285c96726a648b7c9e9e6e852b62, type: 3}
+    itemType: 2
+  - name: Corn_Harvestabe
+    sprite: {fileID: 21300000, guid: 3ecd84bd73e63bf4cbb76a3aa2f0fc68, type: 3}
+    cost: 0
+    count: 0
+    Description: 
+    daysToGrow: 0
+    cropPrefab: {fileID: 2670774451695662418, guid: 507f00aade1bde542bd0c094f99b0135, type: 3}
+    itemType: 2
+  - name: Eggplant_Harvestabe
+    sprite: {fileID: 21300000, guid: 5640eeddcf6dc9140a71c9d2798062cb, type: 3}
+    cost: 0
+    count: 0
+    Description: 
+    daysToGrow: 0
+    cropPrefab: {fileID: 2670774451695662418, guid: 1b5021dd8154a93498d1df2a668fce52, type: 3}
+    itemType: 2
+  - name: Pumpkin_Harvestabe
+    sprite: {fileID: 21300000, guid: 12bc48bb7bb98e246b3bdd3fbb27299a, type: 3}
+    cost: 0
+    count: 0
+    Description: 
+    daysToGrow: 0
+    cropPrefab: {fileID: 2670774451695662418, guid: 26ca76b30afdd8c41ba76275ca22ef05, type: 3}
+    itemType: 2
+  - name: Tomato_Harvestabe
+    sprite: {fileID: 21300000, guid: 30d4d95c5c484b54eb2149ffa0364f76, type: 3}
+    cost: 0
+    count: 0
+    Description: 
+    daysToGrow: 0
+    cropPrefab: {fileID: 2670774451695662418, guid: a1ce1edf0917aa64696f3bab48a22f8a, type: 3}
+    itemType: 2
+  - name: Tree_Harvestabe
+    sprite: {fileID: 21300000, guid: 20693451af3d4ac4199ddc9f8f9a6653, type: 3}
+    cost: 0
+    count: 0
+    Description: 
+    daysToGrow: 0
+    cropPrefab: {fileID: 2670774451695662418, guid: 227151988d412b848b7e7d3545877cba, type: 3}
+    itemType: 2
   itemType: 0
 --- !u!23 &118392688
 MeshRenderer:
@@ -2527,6 +2573,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 38166148}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -3058,6 +3105,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 190025097}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -3620,6 +3668,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 1716160897}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -4951,6 +5000,7 @@ MonoBehaviour:
     Description: "\uB098\uBB34 \uBC8C\uBAA9 \uB3C4\uAD6C"
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   - name: "\uACE1\uAD2D\uC774"
     sprite: {fileID: 21300000, guid: 8243fc8ee4f8cdd4ba33cb388e773fe4, type: 2}
     cost: 300
@@ -4958,6 +5008,7 @@ MonoBehaviour:
     Description: "\uB545\uC744 \uAC08\uC544\uBC84\uB9AC\uB294 \uACE1\uAD2D\uC774"
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   - name: "\uC0BD"
     sprite: {fileID: 21300000, guid: db30add56f4561a4ca50db547bcc5c37, type: 2}
     cost: 300
@@ -4966,6 +5017,7 @@ MonoBehaviour:
       \uC0BD"
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   - name: "\uBB3C\uBFCC\uB9AC\uAC1C"
     sprite: {fileID: 21300000, guid: fa6ca4b2ab3237f40b321b30c47bb74f, type: 3}
     cost: 300
@@ -4973,6 +5025,7 @@ MonoBehaviour:
     Description: "\uC791\uBB3C \uC0DD\uC0B0 \uC18D\uB3C4 \uD5A5\uC0C1"
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   itemType: 1
 --- !u!4 &459535511
 Transform:
@@ -5566,6 +5619,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 1986592125}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -5983,6 +6037,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 2070497338}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -6888,6 +6943,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 52706076}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -7153,6 +7209,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 1616458821}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -7483,6 +7540,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 1817719478}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -8459,7 +8517,7 @@ GameObject:
   - component: {fileID: 782491089}
   m_Layer: 5
   m_Name: Inventory
-  m_TagString: Untagged
+  m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9401,6 +9459,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 1260229799}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -9676,6 +9735,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 2142444557}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -10350,6 +10410,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 191030723}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -11018,6 +11079,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 600145522}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -11939,6 +12001,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 373772323}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -12138,6 +12201,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 1193456265}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -12212,21 +12276,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - name: Tree
-    sprite: {fileID: -6066168239566715429, guid: b546e2259560a7541ad7cb60338d3d7d, type: 3}
-    cost: 100
-    count: 0
-    Description: "\uB098\uBB34\uB97C \uD0A4\uC6CC \uBAA9\uC7AC\uB97C \uC5BB\uC744
-      \uC218 \uC788\uB2E4"
-    daysToGrow: 5
-    cropPrefab: {fileID: 0}
   - name: "\uAC00\uC9C0"
     sprite: {fileID: 21300000, guid: 2df1df31095e30f4eba0a0d9b11ee2cc, type: 3}
     cost: 100
     count: 0
     Description: "\uB9DB\uC5C6\uACE0 \uC601\uC591\uC774 \uD48D\uBD80\uD55C \uAC00\uC9C0"
     daysToGrow: 3
-    cropPrefab: {fileID: 0}
+    cropPrefab: {fileID: 2670774451695662418, guid: 1b5021dd8154a93498d1df2a668fce52, type: 3}
+    itemType: 0
   - name: "\uC21C\uBB34"
     sprite: {fileID: 21300000, guid: 6d698ca580ed40f46936afa68c7492a7, type: 3}
     cost: 200
@@ -12234,28 +12291,41 @@ MonoBehaviour:
     Description: "\uB2EC\uCF64\uD55C \uBFCC\uB9AC\uCC44\uC18C..?"
     daysToGrow: 3
     cropPrefab: {fileID: 2670774451695662418, guid: 4852285c96726a648b7c9e9e6e852b62, type: 3}
+    itemType: 0
   - name: "\uC625\uC218\uC218"
     sprite: {fileID: 21300000, guid: 44498231670d15141831cf88bf16fcb6, type: 3}
     cost: 150
     count: 0
     Description: "\uCF58\uCE58\uC988 \uD574\uBA39\uC73C\uBA74 \uB9DB\uC788\uB294
       \uC625\uC218\uC218"
-    daysToGrow: 3
-    cropPrefab: {fileID: 0}
+    daysToGrow: 4
+    cropPrefab: {fileID: 2670774451695662418, guid: 507f00aade1bde542bd0c094f99b0135, type: 3}
+    itemType: 0
   - name: "\uD1A0\uB9C8\uD1A0"
     sprite: {fileID: 21300000, guid: 46b69102426116848a67585e77523a82, type: 3}
     cost: 250
     count: 0
     Description: "\uD1A0\uB9C8\uD1A0\uB294 \uAC70\uAFB8\uB85C \uD574\uB3C4 \uD1A0\uB9C8\uD1A0"
-    daysToGrow: 3
-    cropPrefab: {fileID: 0}
+    daysToGrow: 1
+    cropPrefab: {fileID: 2670774451695662418, guid: a1ce1edf0917aa64696f3bab48a22f8a, type: 3}
+    itemType: 0
   - name: "\uD638\uBC15"
     sprite: {fileID: 21300000, guid: fcc813065fd67254fb342bf6d2c8ca19, type: 3}
     cost: 300
     count: 0
     Description: "\uC2EC\uC73C\uBA74 \uAC70\uB300\uD574\uC9C0\uB294 \uD638\uBC15"
-    daysToGrow: 3
-    cropPrefab: {fileID: 0}
+    daysToGrow: 5
+    cropPrefab: {fileID: 2670774451695662418, guid: 26ca76b30afdd8c41ba76275ca22ef05, type: 3}
+    itemType: 0
+  - name: Tree
+    sprite: {fileID: -6066168239566715429, guid: b546e2259560a7541ad7cb60338d3d7d, type: 3}
+    cost: 100
+    count: 0
+    Description: "\uB098\uBB34\uB97C \uD0A4\uC6CC \uBAA9\uC7AC\uB97C \uC5BB\uC744
+      \uC218 \uC788\uB2E4"
+    daysToGrow: 5
+    cropPrefab: {fileID: 2670774451695662418, guid: 227151988d412b848b7e7d3545877cba, type: 3}
+    itemType: 0
   itemType: 0
 --- !u!4 &1244729525
 Transform:
@@ -12493,6 +12563,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 443951516}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -12692,6 +12763,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 771226484}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -13597,7 +13669,7 @@ Transform:
   - {fileID: 459535511}
   - {fileID: 114180138}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1424366226
 GameObject:
@@ -13716,6 +13788,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 790223689}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -13821,6 +13894,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 515830361}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -14113,6 +14187,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 2051115575}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -15185,6 +15260,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 673425579}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -15828,6 +15904,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 2030760866}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -16645,6 +16722,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 1293283396}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -16750,6 +16828,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 1738155947}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -17189,6 +17268,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 85261881}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -17416,6 +17496,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 199663005}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -18166,6 +18247,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 517786525}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -18691,6 +18773,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 169230641}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -18908,6 +18991,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 467696011}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -19107,6 +19191,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 2003452205}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -20737,6 +20822,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 1850772673}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -21015,6 +21101,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 6473402}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -21293,6 +21380,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 950690052}
   store: {fileID: 0}
   crop_Obj: {fileID: 0}
@@ -21492,6 +21580,7 @@ MonoBehaviour:
     Description: 
     daysToGrow: 0
     cropPrefab: {fileID: 0}
+    itemType: 0
   image: {fileID: 278528717}
   store: {fileID: 1904504497}
   crop_Obj: {fileID: 0}
@@ -22011,6 +22100,56 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1345201864116129051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8031120932972307822}
+  - component: {fileID: 6535701116276746688}
+  - component: {fileID: 7702031372139796559}
+  - component: {fileID: 1606082659421694234}
+  m_Layer: 0
+  m_Name: Seed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1449978989279729812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8858969597330866312}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 674.3374, y: 715.3989, z: -80.14204}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8031120932972307822}
+  - {fileID: 1791387205271135489}
+  - {fileID: 1747817145715419343}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1606082659421694234
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345201864116129051}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300008, guid: fbd33e75d8d4bf9479c9cb59e83a9e37, type: 3}
 --- !u!4 &1703975892171391028
 Transform:
   m_ObjectHideFlags: 0
@@ -22025,6 +22164,217 @@ Transform:
   m_Father: {fileID: 6650724117075407017}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1738105719803848877
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750992142926393033}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 29a286d2dc90be241a18e462c6b29a5c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1743213538404754583
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788475854089257791}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: fbd33e75d8d4bf9479c9cb59e83a9e37, type: 3}
+--- !u!33 &1745838403205849687
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750992142926393033}
+  m_Mesh: {fileID: 4300006, guid: fbd33e75d8d4bf9479c9cb59e83a9e37, type: 3}
+--- !u!4 &1747817145715419343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750992142926393033}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.278, z: 0.028}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1449978989279729812}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1750992142926393033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1747817145715419343}
+  - component: {fileID: 1745838403205849687}
+  - component: {fileID: 1738105719803848877}
+  - component: {fileID: 1777818213291824613}
+  m_Layer: 0
+  m_Name: Turnip_Harvestabe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!23 &1766478348207346043
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788475854089257791}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 29a286d2dc90be241a18e462c6b29a5c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1776460630271686833
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788475854089257791}
+  m_Mesh: {fileID: 4300004, guid: fbd33e75d8d4bf9479c9cb59e83a9e37, type: 3}
+--- !u!64 &1777818213291824613
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750992142926393033}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300006, guid: fbd33e75d8d4bf9479c9cb59e83a9e37, type: 3}
+--- !u!1 &1788475854089257791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1791387205271135489}
+  - component: {fileID: 1776460630271686833}
+  - component: {fileID: 1766478348207346043}
+  - component: {fileID: 1743213538404754583}
+  m_Layer: 0
+  m_Name: Turnip_Seeding
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1791387205271135489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788475854089257791}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.189, y: -0.132, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1449978989279729812}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2346453093073488182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8858969597330866312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4058361054f2a4795d92229dcdf52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  seed: {fileID: 1345201864116129051}
+  seedling: {fileID: 1788475854089257791}
+  harvestabe: {fileID: 1750992142926393033}
+  Triger_Colider: {fileID: 3141805552136893907}
+  Haves_ItemBuffer: {fileID: 0}
+  cropState: 0
 --- !u!1001 &2516799480554735134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22094,6 +22444,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3165224893961916188}
   m_Mesh: {fileID: -7243678864240609738, guid: 9e073f09f5076a74ca392833fc971737, type: 3}
+--- !u!65 &3141805552136893907
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8858969597330866312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 0.75, z: 0.75}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3165224893961916188
 GameObject:
   m_ObjectHideFlags: 0
@@ -22478,6 +22841,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!33 &6535701116276746688
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345201864116129051}
+  m_Mesh: {fileID: 4300008, guid: fbd33e75d8d4bf9479c9cb59e83a9e37, type: 3}
 --- !u!222 &6628221576811017909
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22735,6 +23106,47 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!23 &7702031372139796559
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345201864116129051}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 29a286d2dc90be241a18e462c6b29a5c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!4 &7726977475469302534
 Transform:
   m_ObjectHideFlags: 0
@@ -22897,6 +23309,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7726977475469577332}
   m_Mesh: {fileID: 4300000, guid: e7aa0181cce7eba47a8561d882cd20a8, type: 3}
+--- !u!4 &8031120932972307822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345201864116129051}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 1449978989279729812}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8087800282991619086
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22935,6 +23361,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8858969597330866312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1449978989279729812}
+  - component: {fileID: 2346453093073488182}
+  - component: {fileID: 3141805552136893907}
+  m_Layer: 0
+  m_Name: Crop_turnip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &9030695875828984028
 GameObject:
   m_ObjectHideFlags: 0

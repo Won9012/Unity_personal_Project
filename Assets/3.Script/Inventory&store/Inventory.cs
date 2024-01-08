@@ -105,7 +105,9 @@ public class Inventory : MonoBehaviour
         else
         {
             //인벤토리에 아이템이 있을 경우
+            SameItem.Setitem(item, SameItem.index);
             SameItem.item.count++;
+            UpdateSlotText(SameItem);
         }
         
     }

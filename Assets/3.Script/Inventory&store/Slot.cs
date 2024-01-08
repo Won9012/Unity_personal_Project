@@ -54,7 +54,6 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
     public void Setitem(ItemProperty newitem,int index)
     {
        // this.item = item;
-
         item = newitem;
 
         if(item == null)
@@ -69,6 +68,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
                 Transform parentTransform = gameObject.transform;
                 image.enabled = true;
                 image.sprite = item.sprite;
+                
                 crop_Obj = item.cropPrefab;
                 if (parentTransform.childCount > 0)
                 {
@@ -126,7 +126,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
         if (slotType == SlotType.Inventory)
         {
             //우선 클릭했을때 아이템이 있으면 마우스포인터에 띄워주고 , 없으면 리턴
-            if (inventory.slots[index].item.count >= 0 && !isItemClicked)
+            if (inventory.slots[index].item.count >= 0 && !isItemClicked && inventory.slots[index].item.itemType == ItemType.SEED ) //씨앗일때만 
             {
                 isItemClicked = true;
                 //print(inventory.slots[index].item.name);
