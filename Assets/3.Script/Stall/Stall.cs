@@ -28,7 +28,8 @@ public class Stall : MonoBehaviour
     float pocketSeedCount = 0;
     float pocketWoodCount = 0;
 
-    public float EndTime = 3f;
+    public float duration = 3f;
+    public Slider slider;
 
     public GameObject Backpack;
 
@@ -310,21 +311,24 @@ public class Stall : MonoBehaviour
     }
 
 
-    private IEnumerator WaitForThreeSeconds()
+    private IEnumerator IncreaseSliderValueOverTime()
     {
         float elapsedTime = 0f;
-        // 3초 동안 대기
-        while (elapsedTime < EndTime)
+        float duration = 3f; // 3초 동안 증가
+
+        while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
-            Debug.Log("Waiting...");
-            yield return null; 
+
+            // value 값을 0에서 1로 보간하여 설정
+            float t = elapsedTime / duration;
+            float sliderValue = Mathf.Lerp(0f, 1f, t);
+            slider.value = sliderValue;
+
+            yield return null;
         }
-
-        // 3초가 경과하면 다음 작업 수행
-        Debug.Log("Coroutine finished after 3 seconds");
+        slider.value = 1f;
     }
-
 }
 
     
