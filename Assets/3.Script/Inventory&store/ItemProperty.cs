@@ -19,6 +19,6 @@ public class ItemProperty
 
 public enum ItemType
 {
-    SEED, Equipment, Harvestable
+    SEED, Equipment, Harvestable , Products
 }
 

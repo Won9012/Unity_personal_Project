@@ -27,7 +27,6 @@ public class CropBehaviour : MonoBehaviour
     {
         // 이게 왜 되는거지? ; => 오브젝트 순서 마지막에 있는애 찾네 
         Haves_ItemBuffer = GameObject.FindObjectOfType<ItemBuffer>(); // 정확히 찾을수 있도록 변경해야함..
-        print(Haves_ItemBuffer.items[1].name);
         inventory = GameObject.FindObjectOfType<Inventory>();
     }
 

@@ -86,6 +86,8 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
         }
     }
 
+
+
     public void OnDrop(PointerEventData eventData)
     {
         GameObject dropped = eventData.pointerDrag;
@@ -123,19 +125,22 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (slotType == SlotType.Inventory)
+        if (slotType == SlotType.Inventory && inventory.slots[index].item !=null)
         {
             //우선 클릭했을때 아이템이 있으면 마우스포인터에 띄워주고 , 없으면 리턴
             if (inventory.slots[index].item.count >= 0 && !isItemClicked && inventory.slots[index].item.itemType == ItemType.SEED ) //씨앗일때만 
             {
                 isItemClicked = true;
-                //print(inventory.slots[index].item.name);
                 cropObject = Instantiate(inventory.slots[index].item.cropPrefab, transform);
                 StartCoroutine(MovePrefab());
             }
+            else
+            {
+                return;
+            }
         }
     }
-
+     
     public IEnumerator MovePrefab()
     {
         Ray ray ;
@@ -165,6 +170,22 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
                         land.cropPlanted = cropObject.GetComponent<CropBehaviour>();
                         land.cropPlanted.Plant(inventory.slots[index].item);
                         isItemClicked = false;
+                        if(inventory.slots[index].item.count>0)
+                        {
+                            inventory.slots[index].item.count--;
+                            inventory.UpdateSlotText(inventory.slots[index]);
+                        }
+                        if (inventory.slots[index].item.count == 0)
+                        {
+                            print(inventory.slots[index].item);
+                            print(inventory.slots[index + 1].item);
+                            inventory.slots[index].item = null;
+                            inventory.slots[index].Setitem(inventory.slots[index].item, index);
+                            inventory.UpdateSlotText(inventory.slots[index]);
+                            print(inventory.slots[index].item);
+                            print(inventory.slots[index + 1].item);
+
+                        }
                     }
                 }
                 else if(!hit.collider.CompareTag("Land") && Input.GetMouseButtonDown(0))

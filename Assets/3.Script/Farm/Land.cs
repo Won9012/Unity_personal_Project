@@ -45,7 +45,7 @@ public class Land : MonoBehaviour, ITimeTraker, IPointerClickHandler
     // Update is called once per frame
     void Update()
     {
-        print(Slot.isItemClicked);
+      //  print(Slot.isItemClicked);
         LandPosition = new Vector3(transform.position.x, .08f, transform.position.z);
        // print(LandPosition);
     }

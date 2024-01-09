@@ -46,15 +46,24 @@ public class Inventory : MonoBehaviour
     }
     public void UpdateSlotText(Slot slot)
     {
-        itemCount_txt[slot.index].text = slot.item.count.ToString();
+        if(slot.item != null)
+        {
+            if (slot.item.count == 0)
+            {
+                itemCount_txt[slot.index].text = "";
+            }
+            else
+            {
+                itemCount_txt[slot.index].text = slot.item.count.ToString();
+            }
+        }
+
+
     }
 
     private void Update()
     {
-        for (int i = 0; i < 5; i++)
-        {
-         //   print($"{i}번째 슬롯 이름" + slots[i].item.name + "  가격" + slots[i].item.cost+ "  보유갯수" + slots[i].item.count);
-        }
+
     }
 
     void BuyItem(ItemProperty item, int itemCount)
