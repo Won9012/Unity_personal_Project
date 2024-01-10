@@ -53,7 +53,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
 
     public void Setitem(ItemProperty newitem,int index)
     {
-       // this.item = item;
+        //this.item = item;
         item = newitem;
 
         if(item == null)

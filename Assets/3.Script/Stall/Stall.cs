@@ -37,7 +37,13 @@ public class Stall : MonoBehaviour
 
     public PlayerMove player;
 
+    public Tools tools;
+
     private bool isCreatingBackpack = false;
+
+    //클릭해서 생산하는 녀석 이름 저장할놈
+    private string NowClicked_Item;
+    private string Wood_Item;
 
     private void Awake()
     {
@@ -46,8 +52,8 @@ public class Stall : MonoBehaviour
         Need_Ingredient2Count = 1;
         ingredient_Count.text = "";
         ingredient2_Count.text = "";
+        NowClicked_Item = "";
         slider_obj.SetActive(false);
-
     }
 
     private void Start()
@@ -84,6 +90,7 @@ public class Stall : MonoBehaviour
                     isEnough = true;
                     ingredient_Count.color = Color.black;
                 }
+                NowClicked_Item = inventory.slots[i].item.name;
             }
         }
 
@@ -104,6 +111,7 @@ public class Stall : MonoBehaviour
                     isEnough = true;
                     ingredient2_Count.color = Color.black;
                 }
+                Wood_Item = inventory.slots[i].item.name;
             }
         }
     }
@@ -134,6 +142,7 @@ public class Stall : MonoBehaviour
                     isEnough = true;
                     ingredient_Count.color = Color.black;
                 }
+             NowClicked_Item = inventory.slots[i].item.name;
             }
         }
 
@@ -154,6 +163,7 @@ public class Stall : MonoBehaviour
                     isEnough = true;
                     ingredient2_Count.color = Color.black;
                 }
+                Wood_Item = inventory.slots[i].item.name;
             }
         }
     }
@@ -184,6 +194,7 @@ public class Stall : MonoBehaviour
                     isEnough = true;
                     ingredient_Count.color = Color.black;
                 }
+                NowClicked_Item = inventory.slots[i].item.name;
             }
         }
 
@@ -205,6 +216,7 @@ public class Stall : MonoBehaviour
                     ingredient2_Count.color = Color.black;
                 }
             }
+            Wood_Item = inventory.slots[i].item.name;
         }
     }
     public void CreatBackPack_Tomato()
@@ -234,7 +246,9 @@ public class Stall : MonoBehaviour
                     isEnough = true;
                     ingredient_Count.color = Color.black;
                 }
+                NowClicked_Item = inventory.slots[i].item.name;                
             }
+            
         }
 
         for (int i = 0; i < inventory.slots.Count; i++)
@@ -254,6 +268,7 @@ public class Stall : MonoBehaviour
                     isEnough = true;
                     ingredient2_Count.color = Color.black;
                 }
+                Wood_Item = inventory.slots[i].item.name;
             }
         }
     }
@@ -285,9 +300,10 @@ public class Stall : MonoBehaviour
                     isEnough = true;
                     ingredient_Count.color = Color.black;
                 }
+                NowClicked_Item = inventory.slots[i].item.name;
             }
         }
-
+        
         for (int i = 0; i < inventory.slots.Count; i++)
         {
             if (inventory.slots[i].item.name == "Tree_Harvestabe")
@@ -305,19 +321,31 @@ public class Stall : MonoBehaviour
                     isEnough = true;
                     ingredient2_Count.color = Color.black;
                 }
+                Wood_Item = inventory.slots[i].item.name;
             }
         }
     }
 
     public void Confirm_Backpack()
     {
-        StartCoroutine(Creat_BackPack());
         if (isEnough && !isCreatingBackpack && player.equipedBackpack == PlayerMove.EquipedBackpack.NotEquiped)
         {
+            StartCoroutine(Creat_BackPack());
         }
     }
 
+    public void StopAllCourutine_Stall()
+    {
+        StopAllCoroutines();
+        slider_obj.SetActive(false);
+        isCreatingBackpack = false;
+        isEnough = true;
+    }
 
+    private void Update()
+    {
+        print(isCreatingBackpack);
+    }
     private IEnumerator Creat_BackPack()
     {
         isEnough = false;
@@ -334,10 +362,69 @@ public class Stall : MonoBehaviour
             float t = elapsedTime / duration;
             float sliderValue = Mathf.Lerp(0f, 1f, t);
             slider.value = sliderValue;
-
             yield return null;
         }
+            
         slider.value = 1f; // 슬라이더값 명확하게 재지정
+
+
+
+        //Todo : 등짐제작 
+        //캐릭터의 상태를 백팩 상태로 변경
+        //캐릭터의 등에 등짐을 생성
+
+        Instantiate(Backpack, Body.transform);
+        player.equipedBackpack = PlayerMove.EquipedBackpack.Equiped; //등짐을 매고있는 상태로 변경 => 등짐을 매고있을때는 제작할 수 없게 하는용도
+        tools.Get_Backpack();
+        isCreatingBackpack = false;
+        slider_obj.SetActive(isCreatingBackpack);
+
+        //------------Stall 에서 택스트 업데이트-------------//
+        //사용한만큼 아이템 감소
+        pocketSeedCount -= Need_IngredientCount;
+        pocketWoodCount -= Need_Ingredient2Count;
+        //텍스트 업데이트
+        ingredient_Count.text = pocketSeedCount.ToString();
+        ingredient2_Count.text = pocketWoodCount.ToString();
+
+        //-------inventory에서 update----------//
+        for (int i = 0; i < inventory.slots.Count; i++)
+        {
+            //씨앗 아이템 갱신
+            if(inventory.slots[i].item.name == NowClicked_Item)
+            {
+                //현재 인벤토리에서 가장 먼저 검색되는 녀석의 갯수가
+                //필요 재료 갯수보다 많을경우 빼주고
+                //적다면, 0이될때까지 빼준후, 나머지는 뒤에녀석에서 찾아서 빼주면됨
+                if(inventory.slots[i].item.count >= Need_IngredientCount)
+                {
+                    inventory.slots[i].item.count -= Need_IngredientCount;
+                    inventory.UpdateSlotText(inventory.slots[i]);
+                    //만약 아이템이 0개가 되는경우에는 인벤토리 아이템 현황도 업데이트 
+                    if(inventory.slots[i].item.count == 0)
+                    {
+                        inventory.slots[i].item = null;
+                        inventory.slots[i].Setitem(inventory.slots[i].item, i); //인벤토리에서 정보 갱신(삭제)
+                    }
+                }
+            }
+
+        }
+        for (int i = 0; i < inventory.slots.Count; i++)
+        {
+            //목재 아이템 갱신
+            if (inventory.slots[i].item != null &&inventory.slots[i].item.name == Wood_Item)
+            {
+                inventory.slots[i].item.count -= Need_Ingredient2Count;
+                inventory.UpdateSlotText(inventory.slots[i]);
+                //만약 아이템이 0개가 되는경우에는 인벤토리 아이템 현황도 업데이트 
+                if (inventory.slots[i].item.count == 0 )
+                {
+                    inventory.slots[i].item = null;
+                    inventory.slots[i].Setitem(inventory.slots[i].item, i); //인벤토리에서 정보 갱신(삭제)
+                }
+            }
+        }
 
 
         if (pocketSeedCount > Need_IngredientCount && pocketWoodCount > Need_Ingredient2Count)
@@ -348,17 +435,8 @@ public class Stall : MonoBehaviour
         {
             isEnough = false;
         }
-
-        //Todo : 등짐제작 
-        //캐릭터의 상태를 백팩 상태로 변경
-        //캐릭터의 등에 등짐을 생성
-
-        Instantiate(Backpack, Body.transform);
-        player.equipedBackpack = PlayerMove.EquipedBackpack.Equiped; //등짐을 매고있는 상태로 변경 => 등짐을 매고있을때는 제작할 수 없게 하는용도
-        isCreatingBackpack = false;
-        slider_obj.SetActive(isCreatingBackpack);
-
     }
+
 }
 
     

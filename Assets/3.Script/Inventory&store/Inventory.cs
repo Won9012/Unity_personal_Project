@@ -15,9 +15,9 @@ public class Inventory : MonoBehaviour
     public Text[] itemCount_txt;
 
     public int Money = 10000;
+    public Text Money_txt;
 
-
-
+    public GameObject NomoneyUI;
 
     private void Start()
     {
@@ -25,14 +25,10 @@ public class Inventory : MonoBehaviour
         store.Buy_items += BuyItem;
         GetSlotIdx();
         gameObject.SetActive(false);
-
-
+        Money_txt.text = Money.ToString();
     }
 
-    private void ToogleInventroy()
-    {
-
-    }
+    
 
     private void GetSlotIdx()
     {
@@ -57,17 +53,35 @@ public class Inventory : MonoBehaviour
                 itemCount_txt[slot.index].text = slot.item.count.ToString();
             }
         }
-
-
     }
 
-    private void Update()
+    public void UpdateMoneyText(int cost)
     {
+        Money_txt.text = Money.ToString();
+    }
 
+    private IEnumerator Nomoney_co()
+    {
+        yield return new WaitForSeconds(2f);
     }
 
     void BuyItem(ItemProperty item, int itemCount)
     {
+        if(itemCount * item.cost > Money)
+        {
+            //돈이 부족하면 돈부족 UI 활성화
+            print(itemCount * item.cost);
+            NomoneyUI.SetActive(true);
+            return;
+        }
+        else
+        {
+            print(itemCount * item.cost);
+            Money -= (itemCount * item.cost);
+            UpdateMoneyText(Money);
+            print(Money);
+        }
+
         var emptySlot = slots.Find(t => t.item == null || t.item.name == string.Empty);
         var SameItem = slots.Find(t => t.item != null && t.item.name == item.name && t.item.count != MaxStack);
 
@@ -103,6 +117,7 @@ public class Inventory : MonoBehaviour
         }
 
     }
+
     //다자란 아이템을 수확했을때 아이템 셋팅.
     public void GetItem(ItemProperty item)
     {
@@ -158,11 +173,6 @@ public class Inventory : MonoBehaviour
         itemCount_txt[indexB] = temp;
     }
 
-
-    public void UseItem()
-    {
-
-    }
 
 
 

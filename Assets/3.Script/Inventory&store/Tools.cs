@@ -138,6 +138,16 @@ public class Tools : MonoBehaviour
 
     public void Get_Backpack()
     {
-        //무역 아이템을 얻었을 때 백팩 활성화 및 이미지 교체작업해줄것
+        //무역 아이템을 얻었을 때 백팩 활성화 및 이미지 교체
+        toolType = ToolType.EquipedBackpack;
+        StatusImage.sprite = BackPack;
+        StatusImage.enabled = true;
+    }
+
+    public void Sell_or_Car_Backpack()
+    {
+        toolType = ToolType.Empty;
+        StatusImage.sprite = null;
+        StatusImage.enabled = false;
     }
 }
