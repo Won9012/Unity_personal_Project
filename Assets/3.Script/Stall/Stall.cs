@@ -30,8 +30,14 @@ public class Stall : MonoBehaviour
 
     public float duration = 3f;
     public Slider slider;
+    public GameObject slider_obj;
 
     public GameObject Backpack;
+    public GameObject Body;
+
+    public PlayerMove player;
+
+    private bool isCreatingBackpack = false;
 
     private void Awake()
     {
@@ -40,6 +46,7 @@ public class Stall : MonoBehaviour
         Need_Ingredient2Count = 1;
         ingredient_Count.text = "";
         ingredient2_Count.text = "";
+        slider_obj.SetActive(false);
 
     }
 
@@ -304,30 +311,53 @@ public class Stall : MonoBehaviour
 
     public void Confirm_Backpack()
     {
-        if (isEnough)
+        StartCoroutine(Creat_BackPack());
+        if (isEnough && !isCreatingBackpack && player.equipedBackpack == PlayerMove.EquipedBackpack.NotEquiped)
         {
-            Backpack.SetActive(true);
         }
     }
 
 
-    private IEnumerator IncreaseSliderValueOverTime()
+    private IEnumerator Creat_BackPack()
     {
+        isEnough = false;
+        //중복실행 방지용
+        isCreatingBackpack = true;
+        slider_obj.SetActive(isCreatingBackpack);
         float elapsedTime = 0f;
-        float duration = 3f; // 3초 동안 증가
-
+        slider.value = 0.001f;
+        //슬라이더 바로 캐스팅 타임 UI 보여주기 
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
-
-            // value 값을 0에서 1로 보간하여 설정
+            //슬라이더 value값 조정
             float t = elapsedTime / duration;
             float sliderValue = Mathf.Lerp(0f, 1f, t);
             slider.value = sliderValue;
 
             yield return null;
         }
-        slider.value = 1f;
+        slider.value = 1f; // 슬라이더값 명확하게 재지정
+
+
+        if (pocketSeedCount > Need_IngredientCount && pocketWoodCount > Need_Ingredient2Count)
+        {
+            isEnough = true;
+        }
+        else
+        {
+            isEnough = false;
+        }
+
+        //Todo : 등짐제작 
+        //캐릭터의 상태를 백팩 상태로 변경
+        //캐릭터의 등에 등짐을 생성
+
+        Instantiate(Backpack, Body.transform);
+        player.equipedBackpack = PlayerMove.EquipedBackpack.Equiped; //등짐을 매고있는 상태로 변경 => 등짐을 매고있을때는 제작할 수 없게 하는용도
+        isCreatingBackpack = false;
+        slider_obj.SetActive(isCreatingBackpack);
+
     }
 }
 

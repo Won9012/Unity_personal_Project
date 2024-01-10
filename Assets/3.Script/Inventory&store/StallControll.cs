@@ -16,7 +16,6 @@ public class StallControll : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        print("¤±¤¤¤·");
         if (other.gameObject.CompareTag("Player") && player.equipedBackpack == PlayerMove.EquipedBackpack.NotEquiped)
         {
             StallUI.SetActive(true);
