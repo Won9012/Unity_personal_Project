@@ -16,8 +16,12 @@ public class PlayerInteraction : MonoBehaviour
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
 
+    public GameObject Body;
+
     public Tools tools;
     
+    private bool isBoxHaveItem = false;
+
     void Start()
     {
         playerMove = transform.parent.GetComponent<PlayerMove>();
@@ -39,7 +43,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (SellUI.activeSelf || StallUI.activeSelf) return; //UI가 켜져있는 경우엔 걍 리턴?
         Collider other = hit.collider;
-        if (!hit.collider.CompareTag("NPC") && !hit.collider.CompareTag("Stall"))
+        if (!hit.collider.CompareTag("NPC") && !hit.collider.CompareTag("Stall") && !hit.collider.CompareTag("Box"))
         {
             Cursor.SetCursor(cursorTextureA, hotSpot, cursorMode);
         }
@@ -54,6 +58,43 @@ public class PlayerInteraction : MonoBehaviour
         {
             selectedLand.Select(false);
             selectedLand = null;
+        }
+
+        if (other.CompareTag("Box"))
+        {
+            Cursor.SetCursor(cursorTextureB, hotSpot, cursorMode);
+            float distance = Vector3.Distance(playerMove.gameObject.transform.position,
+                                               other.gameObject.transform.position);
+            print(other.gameObject.name);
+            if (Input.GetMouseButtonDown(1) && distance <6.5f && Tools.toolType == Tools.ToolType.EquipedBackpack && !isBoxHaveItem)
+            {
+                Backpack backpack = Body.transform.GetChild(0).gameObject.GetComponent<Backpack>();
+                isBoxHaveItem = true;
+                print(other.gameObject.name);
+                backpack.gameObject.transform.SetParent(other.gameObject.transform.GetChild(0));
+                backpack.gameObject.transform.position = other.gameObject.transform.GetChild(0).transform.position;
+                backpack.gameObject.transform.rotation = other.gameObject.transform.GetChild(0).transform.rotation;
+                Tools.toolType = Tools.ToolType.Empty;
+                playerMove.equipedBackpack = PlayerMove.EquipedBackpack.NotEquiped;
+                tools.Sell_or_Car_Backpack();
+            }
+            else
+            {
+                if (Input.GetMouseButtonDown(1) && distance < 6.5f && Tools.toolType == Tools.ToolType.Empty && isBoxHaveItem)
+                {
+                    GameObject Backpack = other.gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
+                    Backpack.transform.SetParent(null);
+                    Backpack.transform.SetParent(Body.transform);
+                    Backpack.transform.position = Body.transform.position;
+                    Backpack.transform.rotation = Body.transform.rotation;
+                    Tools.toolType = Tools.ToolType.EquipedBackpack;
+                    playerMove.equipedBackpack = PlayerMove.EquipedBackpack.Equiped;
+                    isBoxHaveItem = false;
+                }
+            }
+
+
+
         }
 
         // override로 구성하는게 나았을듯?..ㅡㅡ..

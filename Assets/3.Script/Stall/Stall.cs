@@ -331,9 +331,9 @@ public class Stall : MonoBehaviour
 
     public void Confirm_Backpack()
     {
+            StartCoroutine(Creat_BackPack());
         if (isEnough && !isCreatingBackpack && player.equipedBackpack == PlayerMove.EquipedBackpack.NotEquiped)
         {
-            StartCoroutine(Creat_BackPack());
         }
     }
 

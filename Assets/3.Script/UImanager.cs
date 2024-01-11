@@ -59,4 +59,10 @@ public class UImanager : MonoBehaviour, ITimeTraker
         //format it for the date text display
         dateText.text = $"{season} {day}¿œ ({dayOfTheWeek})";
     }
+
+
+
+
+
+
 }
