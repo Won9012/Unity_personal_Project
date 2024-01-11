@@ -6,6 +6,9 @@ public class PlayerInteraction : MonoBehaviour
 {
     PlayerMove playerMove;
 
+    public GameObject SellUI;
+    public GameObject StallUI;
+
     Land selectedLand=null;
     void Start()
     {
@@ -39,6 +42,34 @@ public class PlayerInteraction : MonoBehaviour
         {
             selectedLand.Select(false);
             selectedLand = null;
+        }
+
+        // override로 구성하는게 나았을듯?..ㅡㅡ..
+        if (other.CompareTag("NPC"))
+        {
+            //마우스클리시 UI활성화, 단 NPC와의 거리가 5미만일때만
+            float distance = 
+                Vector3.Distance(playerMove.gameObject.transform.position,
+                                 other.gameObject.transform.position);
+            if (Input.GetMouseButtonDown(0) && distance < 5f)
+            {
+                print(distance);
+                SellUI.SetActive(true);
+            }
+        }
+
+        if (other.CompareTag("Stall"))
+        {
+            print("ㅎㅇ");
+            //마우스클리시 UI활성화, 단 NPC와의 거리가 5미만일때만
+            float distance =
+                Vector3.Distance(playerMove.gameObject.transform.position,
+                                 other.gameObject.transform.position);
+            if (Input.GetMouseButtonDown(0) && distance < 5f)
+            {
+                print(distance);
+                StallUI.SetActive(true);
+            }
         }
     }
     void SelectLand(Land land)

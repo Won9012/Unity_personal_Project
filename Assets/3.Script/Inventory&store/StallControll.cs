@@ -13,7 +13,7 @@ public class StallControll : MonoBehaviour
     }
 
 
-
+/*
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && player.equipedBackpack == PlayerMove.EquipedBackpack.NotEquiped)
@@ -29,6 +29,6 @@ public class StallControll : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         StallUI.SetActive(false);
-    }
+    }*/
 
 }

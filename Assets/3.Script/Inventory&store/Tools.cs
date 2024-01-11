@@ -34,6 +34,15 @@ public class Tools : MonoBehaviour
         ToolSetting();
         GetSlotIdx();
     }
+
+    private void Update()
+    {
+        if(toolType == ToolType.Empty)
+        {
+            StatusImage.sprite = null;
+            StatusImage.enabled = false;
+        }
+    }
     public void ToolSetting()
     {
         slots = new List<Slot>();

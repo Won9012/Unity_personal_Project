@@ -113,18 +113,6 @@ public class CropBehaviour : MonoBehaviour
         //현재 작물의 상태 변경
         cropState = stateToSwich;
     }
-/*    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && cropState == CropState.HARVESTABLE)
-        {
-            print("ㅎㅇ");
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                print("ㅎ 2");
-            }
-            
-        }
-    }*/
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player") && cropState == CropState.HARVESTABLE && Input.GetKeyDown(KeyCode.Space))

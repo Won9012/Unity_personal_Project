@@ -8,6 +8,8 @@ TagManager:
   - grid
   - Land
   - Inventory
+  - NPC
+  - Stall
   layers:
   - Default
   - TransparentFX

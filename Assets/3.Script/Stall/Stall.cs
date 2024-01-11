@@ -41,6 +41,8 @@ public class Stall : MonoBehaviour
 
     private bool isCreatingBackpack = false;
 
+    public GameObject StallUI;
+
     //클릭해서 생산하는 녀석 이름 저장할놈
     private string NowClicked_Item;
     private string Wood_Item;
@@ -66,6 +68,7 @@ public class Stall : MonoBehaviour
             }
         }
     }
+
 
     //Stall 에서 누르면 아이템 제작할 버튼들.
 
@@ -344,7 +347,17 @@ public class Stall : MonoBehaviour
 
     private void Update()
     {
-        print(isCreatingBackpack);
+        float distance = Vector3.Distance(player.gameObject.transform.position,gameObject.transform.position);
+
+        if(distance > 3f)
+        {
+            StopAllCoroutines();
+            slider_obj.SetActive(false);
+            isCreatingBackpack = false;
+            isEnough = true;
+            StallUI.SetActive(false);
+        }
+        print(distance);
     }
     private IEnumerator Creat_BackPack()
     {

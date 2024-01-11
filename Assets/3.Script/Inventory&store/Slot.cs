@@ -147,6 +147,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
         RaycastHit hit;
         while (isItemClicked)
         {
+            Cursor.visible = false;
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray,out hit, Mathf.Infinity))
             {
@@ -188,7 +189,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
                         }
                     }
                 }
-                else if(!hit.collider.CompareTag("Land") && Input.GetMouseButtonDown(0))
+                else if(!hit.collider.CompareTag("Land") && Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Escape))
                 {
                     isItemClicked = false;
                     Destroy(cropObject);
@@ -196,6 +197,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
                 }
             }
             yield return null; // 다음 프레임으로 넘어감
+            Cursor.visible = true;
         }
 
     }
