@@ -78,6 +78,7 @@ public class Tools : MonoBehaviour
     //¼ø¼­´Â µµ³¢, °î±ªÀÌ,»ð, ºÐ¹«±â
     public void Get_Axe()
     {
+        if (toolType == ToolType.EquipedBackpack) return;
         StatusImage.sprite = slots[0].item.sprite;
         StatusImage.enabled = true;
         toolType = ToolType.Axe;
@@ -95,6 +96,7 @@ public class Tools : MonoBehaviour
     }
     public void Get_pick()
     {
+        if (toolType == ToolType.EquipedBackpack) return;
         StatusImage.sprite = slots[1].item.sprite;
         StatusImage.enabled = true;
         toolType = ToolType.Pick;
@@ -112,6 +114,7 @@ public class Tools : MonoBehaviour
     }
     public void Get_hoe()
     {
+        if (toolType == ToolType.EquipedBackpack) return;
         StatusImage.sprite = slots[2].item.sprite;
         StatusImage.enabled = true;
         toolType = ToolType.Hoe;
@@ -129,6 +132,7 @@ public class Tools : MonoBehaviour
     }
     public void Get_Water()
     {
+        if (toolType == ToolType.EquipedBackpack) return;
         StatusImage.sprite = slots[3].item.sprite;
         StatusImage.enabled = true;
         toolType = ToolType.Water;
@@ -151,6 +155,10 @@ public class Tools : MonoBehaviour
         toolType = ToolType.EquipedBackpack;
         StatusImage.sprite = BackPack;
         StatusImage.enabled = true;
+        for (int i = 0; i < Tool_items.Length; i++)
+        {
+            Tool_items[i].SetActive(false);
+        }
     }
 
     public void Sell_or_Car_Backpack()

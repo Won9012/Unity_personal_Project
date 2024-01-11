@@ -10,6 +10,14 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject StallUI;
 
     Land selectedLand=null;
+    
+    public Texture2D cursorTextureA;
+    public Texture2D cursorTextureB;
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
+
+    public Tools tools;
+    
     void Start()
     {
         playerMove = transform.parent.GetComponent<PlayerMove>();
@@ -29,8 +37,12 @@ public class PlayerInteraction : MonoBehaviour
 
     void OnInteractableHit(RaycastHit hit)
     {
+        if (SellUI.activeSelf || StallUI.activeSelf) return; //UI가 켜져있는 경우엔 걍 리턴?
         Collider other = hit.collider;
-
+        if (!hit.collider.CompareTag("NPC") && !hit.collider.CompareTag("Stall"))
+        {
+            Cursor.SetCursor(cursorTextureA, hotSpot, cursorMode);
+        }
         if (other.CompareTag("Land"))
         {
             Land land = other.GetComponent<Land>();
@@ -47,28 +59,28 @@ public class PlayerInteraction : MonoBehaviour
         // override로 구성하는게 나았을듯?..ㅡㅡ..
         if (other.CompareTag("NPC"))
         {
-            //마우스클리시 UI활성화, 단 NPC와의 거리가 5미만일때만
+            Cursor.SetCursor(cursorTextureB, hotSpot, cursorMode);
             float distance = 
                 Vector3.Distance(playerMove.gameObject.transform.position,
                                  other.gameObject.transform.position);
             if (Input.GetMouseButtonDown(0) && distance < 5f)
             {
-                print(distance);
                 SellUI.SetActive(true);
+                Cursor.SetCursor(cursorTextureA, hotSpot, cursorMode);
             }
         }
 
         if (other.CompareTag("Stall"))
         {
-            print("ㅎㅇ");
+            Cursor.SetCursor(cursorTextureB, hotSpot, cursorMode);
             //마우스클리시 UI활성화, 단 NPC와의 거리가 5미만일때만
             float distance =
                 Vector3.Distance(playerMove.gameObject.transform.position,
                                  other.gameObject.transform.position);
             if (Input.GetMouseButtonDown(0) && distance < 5f)
             {
-                print(distance);
                 StallUI.SetActive(true);
+                Cursor.SetCursor(cursorTextureA, hotSpot, cursorMode);
             }
         }
     }

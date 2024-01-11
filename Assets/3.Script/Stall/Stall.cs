@@ -349,7 +349,7 @@ public class Stall : MonoBehaviour
     {
         float distance = Vector3.Distance(player.gameObject.transform.position,gameObject.transform.position);
 
-        if(distance > 3f)
+        if(distance > 3f && StallUI.activeSelf)
         {
             StopAllCoroutines();
             slider_obj.SetActive(false);
@@ -357,7 +357,6 @@ public class Stall : MonoBehaviour
             isEnough = true;
             StallUI.SetActive(false);
         }
-        print(distance);
     }
     private IEnumerator Creat_BackPack()
     {

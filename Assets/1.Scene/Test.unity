@@ -2615,7 +2615,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1383934985}
+      - m_Target: {fileID: 603814936}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -12134,6 +12134,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SellUI: {fileID: 603814936}
   StallUI: {fileID: 264013146}
+  cursorTextureA: {fileID: 2800000, guid: 9c39c0f30793b7841b772af93d80ee25, type: 3}
+  cursorTextureB: {fileID: 2800000, guid: 3fd4ebc01c064644293052b6f021eedb, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
+  tools: {fileID: 0}
 --- !u!1 &950690048
 GameObject:
   m_ObjectHideFlags: 0

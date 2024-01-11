@@ -21,16 +21,6 @@ public class TradeNpc : MonoBehaviour
 
     public void SellBackpack_btn()
     {
-        //장착중이라면, 판매버튼 누를때 장착한 무역아이템이 해제되고
-        //무역아이템의 가격만큼 인벤토리에 돈이 들어온다.
-        /*
-
-                print(backpack.BackpackName);
-                print(backpack.BackpackPrice);
-                print(backpack.gameObject.name);
-        */
-        print(player.equipedBackpack);
-        print(inventory.Money);
         if(player.equipedBackpack == PlayerMove.EquipedBackpack.Equiped)
         {
             Backpack backpack = Body.transform.GetChild(0).gameObject.GetComponent<Backpack>();
