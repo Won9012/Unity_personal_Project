@@ -20,7 +20,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public Tools tools;
     
-    private bool isBoxHaveItem = false;
+    public static bool isBoxHaveItem = false;
 
     void Start()
     {
@@ -37,6 +37,8 @@ public class PlayerInteraction : MonoBehaviour
         {
             OnInteractableHit(hit);
         }
+        print(Tools.toolType);
+        print(isBoxHaveItem);
     }
 
     void OnInteractableHit(RaycastHit hit)
@@ -68,15 +70,24 @@ public class PlayerInteraction : MonoBehaviour
             print(other.gameObject.name);
             if (Input.GetMouseButtonDown(1) && distance <6.5f && Tools.toolType == Tools.ToolType.EquipedBackpack && !isBoxHaveItem)
             {
+                print("dididi");
                 Backpack backpack = Body.transform.GetChild(0).gameObject.GetComponent<Backpack>();
-                isBoxHaveItem = true;
                 print(other.gameObject.name);
                 backpack.gameObject.transform.SetParent(other.gameObject.transform.GetChild(0));
                 backpack.gameObject.transform.position = other.gameObject.transform.GetChild(0).transform.position;
                 backpack.gameObject.transform.rotation = other.gameObject.transform.GetChild(0).transform.rotation;
+                backpack.gameObject.transform.localPosition = Vector3.zero;
+
+                Quaternion additionalRotation = Quaternion.Euler(-0.015f, 44.025f, 0.021f);
+                Vector3 addotoonalPosition = new Vector3(0.00498f, 2e-05f, -0.00656f);
+                backpack.gameObject.transform.localRotation = additionalRotation;
+                backpack.gameObject.transform.localPosition = addotoonalPosition;
                 Tools.toolType = Tools.ToolType.Empty;
                 playerMove.equipedBackpack = PlayerMove.EquipedBackpack.NotEquiped;
                 tools.Sell_or_Car_Backpack();
+                
+                isBoxHaveItem = true;
+                return;  // 추가된 부분
             }
             else
             {
@@ -89,7 +100,13 @@ public class PlayerInteraction : MonoBehaviour
                     Backpack.transform.rotation = Body.transform.rotation;
                     Tools.toolType = Tools.ToolType.EquipedBackpack;
                     playerMove.equipedBackpack = PlayerMove.EquipedBackpack.Equiped;
+                    
                     isBoxHaveItem = false;
+                    return;  // 추가된 부분
+                }
+                else
+                {
+                    return;
                 }
             }
 

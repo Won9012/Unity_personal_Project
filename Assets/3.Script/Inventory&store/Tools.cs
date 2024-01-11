@@ -155,6 +155,8 @@ public class Tools : MonoBehaviour
         toolType = ToolType.EquipedBackpack;
         StatusImage.sprite = BackPack;
         StatusImage.enabled = true;
+        PlayerInteraction.isBoxHaveItem = false;
+        
         for (int i = 0; i < Tool_items.Length; i++)
         {
             Tool_items[i].SetActive(false);
