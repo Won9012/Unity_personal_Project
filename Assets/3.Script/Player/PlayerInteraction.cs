@@ -14,13 +14,17 @@ public class PlayerInteraction : MonoBehaviour
     
     public Texture2D cursorTextureA;
     public Texture2D cursorTextureB;
+    public Texture2D ByuCursor;
+    public Texture2D OpenDoor;
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
 
     public GameObject Body;
 
     public Tools tools;
-    
+
+    public GameObject LandParent;
+
     public static bool isBoxHaveItem = false;
 
     void Start()
@@ -38,8 +42,6 @@ public class PlayerInteraction : MonoBehaviour
         {
             OnInteractableHit(hit);
         }
-        print(Tools.toolType);
-        print(isBoxHaveItem);
     }
 
     void OnInteractableHit(RaycastHit hit)
@@ -143,9 +145,9 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("FenceDoor"))
+        if (other.CompareTag("FenceDoor") && Land.landoner == Land.Landoner.No)
         {
-            Cursor.SetCursor(cursorTextureB, hotSpot, cursorMode);
+            Cursor.SetCursor(ByuCursor, hotSpot, cursorMode);
             float distance =
                 Vector3.Distance(playerMove.gameObject.transform.position,
                                  other.gameObject.transform.position);
@@ -155,6 +157,17 @@ public class PlayerInteraction : MonoBehaviour
                 Cursor.SetCursor(cursorTextureA, hotSpot, cursorMode);
             }
         }
+        //Land LandStatus = LandParent.transform.GetChild(0).gameObject.GetComponent<Land>();
+
+        if (other.CompareTag("FenceDoor") && Land.landoner == Land.Landoner.Yes)
+        {
+            Cursor.SetCursor(OpenDoor, hotSpot, cursorMode);
+            float distance =
+                Vector3.Distance(playerMove.gameObject.transform.position,
+                                 other.gameObject.transform.position);; 
+        }
+
+
     }
     void SelectLand(Land land)
     {

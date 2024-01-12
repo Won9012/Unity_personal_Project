@@ -22,6 +22,8 @@ public class CarManager : MonoBehaviour
     [SerializeField] private GameObject ImageRideOff;
 
     [SerializeField] private GameObject car;
+    [SerializeField] private Transform carOffposition;
+
 
     static public bool isRide = false;
 
@@ -51,7 +53,7 @@ public class CarManager : MonoBehaviour
     public void Click_RideOff_btn()
     {
         isRide = false;
-        player_m.transform.position = new Vector3(middle.transform.position.x, middle.transform.position.y, middle.transform.position.z -2f);
+        player_m.transform.position = carOffposition.position;
         player_m.enabled = true;
         player.transform.parent = null;
         player_rb.useGravity = true;

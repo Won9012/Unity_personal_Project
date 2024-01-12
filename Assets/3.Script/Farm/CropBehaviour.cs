@@ -72,6 +72,20 @@ public class CropBehaviour : MonoBehaviour
     }
 
     //심으면 자라게 할꺼임
+    public void GrowFast()
+    {
+        growth+=2;
+
+        //재배 시간의 반만큼 지난다면, 줄기로 변환
+        if(growth >= MaxGrowth * 0.5 && cropState == CropState.SEED)
+        {
+            SwichState(CropState.SEEDLING);
+        }
+        if(growth >= MaxGrowth && cropState == CropState.SEEDLING)
+        {
+            SwichState(CropState.HARVESTABLE);
+        }
+    }
     public void Grow()
     {
         growth++;

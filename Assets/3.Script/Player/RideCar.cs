@@ -6,10 +6,11 @@ public class RideCar : MonoBehaviour
 {
     [SerializeField] private GameObject middle;
     [SerializeField] private GameObject Image;
-
+    [SerializeField] private GameObject Car;
     private void Awake()
     {
         Image.SetActive(false);
+        Car.SetActive(false);
     }
     //차를 타지 않은 상황에서 차근처에 접근을 했을때 상황
     private void OnTriggerStay(Collider other)

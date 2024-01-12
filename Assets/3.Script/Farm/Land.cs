@@ -12,8 +12,15 @@ public class Land : MonoBehaviour, ITimeTraker, IPointerClickHandler
     //땅의 상태에 따라 농사를 할것
     public enum LandStatus
     {
-        Grass,Farmland,waterd
+        Grass, Farmland, waterd
     }
+
+    public enum Landoner
+    {
+        No, Yes
+    }
+
+    public static Landoner landoner;
 
     public LandStatus landStatus;
 
@@ -47,11 +54,12 @@ public class Land : MonoBehaviour, ITimeTraker, IPointerClickHandler
     {
       //  print(Slot.isItemClicked);
         LandPosition = new Vector3(transform.position.x, .08f, transform.position.z);
-       // print(LandPosition);
+        // print(LandPosition);
     }
 
     public void SwitchLandStatus(LandStatus statusToSwich)
     {
+        if (landoner == Landoner.No) return; //내땅이 아니면 꺼졍
         landStatus = statusToSwich;
         Material materialToSwich = grassMat;
         switch (statusToSwich)
@@ -141,19 +149,22 @@ public class Land : MonoBehaviour, ITimeTraker, IPointerClickHandler
         if(landStatus == LandStatus.waterd)
         {
             int hoursElasped =  GameTimeStamp.CompareTimestamps(timeWatered, timeStamp);
-
-
             //물을 주면 작물이 빠르게 자라도록 하기
             if(cropPlanted != null)
             {
-                cropPlanted.Grow();
+                cropPlanted.GrowFast();
             }
-
-
             if(hoursElasped > 23)
             {
                 //24시간후에 땅 말라라 
                 SwitchLandStatus(LandStatus.Farmland);
+            }
+        }
+        else if (landStatus == LandStatus.Farmland)
+        {
+            if (cropPlanted != null)
+            {
+                cropPlanted.Grow();
             }
         }
     }

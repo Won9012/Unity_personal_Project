@@ -92,19 +92,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
     {
         GameObject dropped = eventData.pointerDrag;
         DragDrop DragItem = dropped.GetComponent<DragDrop>();
-
-/*        //드래그엔 드랍후 놓는 위치에 원래 있던 이미지 
-        Image targetSlotImg = gameObject.transform.GetChild(0).gameObject.GetComponent<Image>();
-        //드래그하고 있는녀석의 이미지
-        Image DragImg = DragItem.image;
-*/
-        //드래그한 아이템을 타겟 슬롯의 위치에 놓는작업
-        DragItem.parentAfterDrag = transform;
-        //드래그 아이템 이미지 초기화
-       // DragItem.image = targetSlotImg; 
-
-        
-
+        DragItem.parentAfterDrag = transform;     
 
         if (gameObject.transform.GetChild(0).gameObject != null)
         {
@@ -167,7 +155,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerClickHandler
                         print("들어오니?");
                         cropObject.transform.SetParent(null);
                         cropObject.transform.SetParent(hitObject.transform);
-                        cropObject.transform.position =  new Vector3(hitObject.transform.position.x, .08f, hitObject.transform.position.z);
+                        cropObject.transform.position =  new Vector3(hitObject.transform.position.x, 1-0.519f, hitObject.transform.position.z);
                         land.cropPlanted = cropObject.GetComponent<CropBehaviour>();
                         land.cropPlanted.Plant(inventory.slots[index].item);
                         isItemClicked = false;

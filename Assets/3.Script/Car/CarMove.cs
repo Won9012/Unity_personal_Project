@@ -22,7 +22,14 @@ public class CarMove : MonoBehaviour
     }
 
 
-    void Update()
+/*    void Update()
+    {
+        MoveCar();
+        StopCar();
+        Rotate_WheelPrefab();
+    }*/
+
+    private void FixedUpdate()
     {
         MoveCar();
         StopCar();
@@ -50,21 +57,23 @@ public class CarMove : MonoBehaviour
             Vector3 pos;
             Quaternion quat;
             wheels[i].GetWorldPose(out pos, out quat);
-            Quaternion newRotation = Quaternion.Euler(quat.eulerAngles.z, quat.eulerAngles.y + 90f, quat.eulerAngles.x);
-
-            tires[i].position = pos;
+           //aternion newRotation = Quaternion.Euler(quat.eulerAngles.z, quat.eulerAngles.y + 90f, quat.eulerAngles.x);
+            Quaternion newRotation = quat * Quaternion.Euler(0f, 90f, 0f);
             tires[i].rotation = newRotation;
+            tires[i].position = pos;
         }
     }
 
     private void StopCar()
     {
-        if (!Input.anyKey)
+        if (Input.GetKey(KeyCode.Space))
         {
+            
             for (int i = 0; i < wheels.Length; i++)
             {
                 wheels[i].brakeTorque = 20000f;
             }
+            print(wheels[0].brakeTorque);
         }
         else
         {
@@ -74,4 +83,5 @@ public class CarMove : MonoBehaviour
             }
         }
     }
+
 }

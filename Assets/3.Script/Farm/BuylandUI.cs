@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class BuylandUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Inventory inventory;
+    public GameObject Oner;
+    public Material SwichMaterial;
 
-    // Update is called once per frame
-    void Update()
+    public GameObject BuyUI_land;
+
+    private void Start()
     {
-        
+        BuyUI_land.SetActive(false);
+    }
+    public void Clicked_BuyLand()
+    {
+        print(Land.landoner);
+        if(inventory.Money >= 3000 && Land.landoner != Land.Landoner.Yes)
+        {
+            Land.landoner = Land.Landoner.Yes;
+            inventory.Money -= 3000;
+            inventory.UpdateMoneyText(inventory.Money);
+
+            Renderer renderer = Oner.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.material = SwichMaterial;
+            }
+        }
     }
 }
