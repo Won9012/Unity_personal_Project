@@ -8,6 +8,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public GameObject SellUI;
     public GameObject StallUI;
+    public GameObject BuyLandUI;
 
     Land selectedLand=null;
     
@@ -45,7 +46,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (SellUI.activeSelf || StallUI.activeSelf) return; //UI가 켜져있는 경우엔 걍 리턴?
         Collider other = hit.collider;
-        if (!hit.collider.CompareTag("NPC") && !hit.collider.CompareTag("Stall") && !hit.collider.CompareTag("Box"))
+        if (!hit.collider.CompareTag("NPC") && !hit.collider.CompareTag("Stall") && !hit.collider.CompareTag("Box")&& !hit.collider.CompareTag("FenceDoor"))
         {
             Cursor.SetCursor(cursorTextureA, hotSpot, cursorMode);
         }
@@ -138,6 +139,19 @@ public class PlayerInteraction : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && distance < 5f)
             {
                 StallUI.SetActive(true);
+                Cursor.SetCursor(cursorTextureA, hotSpot, cursorMode);
+            }
+        }
+
+        if (other.CompareTag("FenceDoor"))
+        {
+            Cursor.SetCursor(cursorTextureB, hotSpot, cursorMode);
+            float distance =
+                Vector3.Distance(playerMove.gameObject.transform.position,
+                                 other.gameObject.transform.position);
+            if (Input.GetMouseButtonDown(0) && distance < 10f)
+            {
+                BuyLandUI.SetActive(true);
                 Cursor.SetCursor(cursorTextureA, hotSpot, cursorMode);
             }
         }

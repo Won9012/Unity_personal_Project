@@ -21,6 +21,8 @@ public class CarManager : MonoBehaviour
     [SerializeField] private GameObject ImageRideOn;
     [SerializeField] private GameObject ImageRideOff;
 
+    [SerializeField] private GameObject car;
+
     static public bool isRide = false;
 
     private void Start()
@@ -32,7 +34,7 @@ public class CarManager : MonoBehaviour
     {
         isRide = true;
         player_m.transform.position = new Vector3(middle.transform.position.x, middle.transform.position.y +0.3f, middle.transform.position.z);
-        player_m.transform.rotation = Quaternion.Euler(0, 90f, 0f);
+        player_m.transform.rotation = car.transform.rotation;
         player.transform.parent = middle.transform;
         player_rb.useGravity = false;
         player_rb.isKinematic = true;
