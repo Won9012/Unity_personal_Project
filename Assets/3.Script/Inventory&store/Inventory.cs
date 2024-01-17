@@ -1,10 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class InventoryData
+{
+    public List<SlotData> slotDataList = new List<SlotData>();
+    public int Money;
+}
+
+[System.Serializable]
+public class SlotData
+{
+    public string itemName;
+    public int itemCount;
+    public Sprite itemSprite;
+}
+
 public class Inventory : MonoBehaviour
 {
+    private static Inventory _instance;
+
+    public static Inventory instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<Inventory>();
+                if (_instance == null)
+                {
+                    GameObject obj = new GameObject("Inventory");
+                    _instance = obj.AddComponent<Inventory>();
+                }
+            }
+            return _instance;
+        }
+    }
     public Transform rootSlot;
     public Store store;
     public int MaxStack = 999;
@@ -14,7 +48,7 @@ public class Inventory : MonoBehaviour
 
     public Text[] itemCount_txt;
 
-    public int Money = 10000;
+    public int Money = 0;
     public Text Money_txt;
 
     public GameObject NomoneyUI;
@@ -25,10 +59,18 @@ public class Inventory : MonoBehaviour
         store.Buy_items += BuyItem;
         GetSlotIdx();
         gameObject.SetActive(false);
-        Money_txt.text = Money.ToString();
+        Money = DataManager.instance.nowPlayer.Gold;
+        Money_txt.text = DataManager.instance.nowPlayer.Gold.ToString();
+        LoadInventory();
     }
 
-    
+
+    private void Update()
+    {
+        print(slots[0].item);
+        print(slots[1]);
+        print(slots[2]);
+    }
 
     private void GetSlotIdx()
     {
@@ -174,7 +216,61 @@ public class Inventory : MonoBehaviour
     }
 
 
+    public void SaveInventory()
+    {
+        InventoryData inventoryData = new InventoryData();
+
+        foreach (var slot in slots)
+        {
+            SlotData slotData = new SlotData
+            {
+                itemName = slot.item != null ? slot.item.name : "",
+                itemCount = slot.item != null ? slot.item.count : 0,
+                itemSprite = slot.item != null ? slot.item.sprite : null
+            };
+            inventoryData.slotDataList.Add(slotData);
+        }
+
+        inventoryData.Money = Money;
+
+        string data = JsonUtility.ToJson(inventoryData);
+        File.WriteAllText(Application.persistentDataPath + "/save_inventory.json", data);
+    }
+
+    public void LoadInventory()
+    {
+        string filePath = Application.persistentDataPath + "/save_inventory.json";
+
+        if (File.Exists(filePath))
+        {
+            string data = File.ReadAllText(filePath);
+            InventoryData inventoryData = JsonUtility.FromJson<InventoryData>(data);
+
+            for (int i = 0; i < Mathf.Min(slots.Count, inventoryData.slotDataList.Count); i++)
+            {
+                SlotData slotData = inventoryData.slotDataList[i];
+                ItemProperty item = new ItemProperty
+                {
+                    name = slotData.itemName,
+                    count = slotData.itemCount,
+                    sprite = slotData.itemSprite
+                };
+                slots[i].Setitem(item, i);
+                UpdateSlotText(slots[i]);
+            }
+
+            Money = inventoryData.Money;
+            Money_txt.text = Money.ToString();
+        }
+        else
+        {
+            Debug.Log("No inventory data found. Initializing...");
+            // 파일이 없을 경우 초기화 코드를 추가하면 됩니다.
+        }
+    }
+
 
 
 
 }
+

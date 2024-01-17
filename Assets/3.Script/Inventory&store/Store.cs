@@ -76,6 +76,7 @@ public class Store : MonoBehaviour
             Buy_items(selectedStoreItem, GetItemCountFromUser());
             selectedStoreItem = null;  // 선택한 아이템 초기화
             offBuyUI();
+            Inventory.instance.SaveInventory();
         }
     }
 

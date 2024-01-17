@@ -32,6 +32,8 @@ public class PlayerMove : MonoBehaviour
         TryGetComponent(out anim);
         camera = Camera.main;
         playerInteraction = GetComponentInChildren<PlayerInteraction>();
+        DataManager.instance.LoadData();
+        transform.position = DataManager.instance.nowPlayer.position;
     }
 
     private void Update()
@@ -42,6 +44,8 @@ public class PlayerMove : MonoBehaviour
         {
             TimeManager.Instance.Tick();
         }
+        DataManager.instance.nowPlayer.position = transform.position;
+        DataManager.instance.SaveData();
     }
 
     public void Interact(Tools.ToolType toolType)

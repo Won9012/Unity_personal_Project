@@ -14,13 +14,12 @@ using System;
 //1.외부 저장  제이슨을 가져옴
 //2. 제이슨을 데이터형테로 변환
 //3. 불러온 데이터를 사용
-
 public class PlayerData
 {
-    //이름, 레벨 , 코인 , 착용중인 무기?
     public string name;
-    public int Gold = 10000;
+    public int Gold = 100000;
     public int Item = -1;
+    public Vector3 position;
 }
 
 public class DataManager : MonoBehaviour
@@ -64,6 +63,7 @@ public class DataManager : MonoBehaviour
     public void DataClear()
     {
         nowSlot = -1;
+        nowPlayer = null;
         nowPlayer = new PlayerData();
     }
 }
