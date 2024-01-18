@@ -32,8 +32,11 @@ public class PlayerMove : MonoBehaviour
         TryGetComponent(out anim);
         camera = Camera.main;
         playerInteraction = GetComponentInChildren<PlayerInteraction>();
-        DataManager.instance.LoadData();
-        transform.position = DataManager.instance.nowPlayer.position;
+        if (DataManager.instance.nowPlayer != null)
+        {
+            DataManager.instance.LoadData();
+            transform.position = DataManager.instance.nowPlayer.position;
+        }
     }
 
     private void Update()
