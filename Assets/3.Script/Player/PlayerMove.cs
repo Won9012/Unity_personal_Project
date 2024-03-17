@@ -47,7 +47,7 @@ public class PlayerMove : MonoBehaviour
         {
             TimeManager.Instance.Tick();
         }
-        DataManager.instance.nowPlayer.position = transform.position;
+      //  DataManager.instance.nowPlayer.position = transform.position;
         DataManager.instance.SaveData();
     }
 

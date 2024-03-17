@@ -131,7 +131,7 @@ public class CropBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Player") && cropState == CropState.HARVESTABLE && Input.GetKeyDown(KeyCode.Space))
         {
-            if (Tools.toolType != Tools.ToolType.Hoe) return;
+           // if (Tools.toolType != Tools.ToolType.Hoe) return;
             for (int i = 0; i < Haves_ItemBuffer.items.Count; i++)
             {
                 if(Haves_ItemBuffer.items[i].name == gameObject.transform.GetChild(2).name)
